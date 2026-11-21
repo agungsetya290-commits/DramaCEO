@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Drama CEO • 3D Space Orbital Station</title>
+<title>Drama CEO • Spaceship Bridge Command</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Three.js 3D Engine -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
@@ -15,23 +15,21 @@
   --neon-gold: #ffd700;
   --neon-purple: #bd00ff;
   --neon-green: #00ff66;
-  --space-dark: #05060c;
-  --panel-bg: rgba(10, 14, 26, 0.85);
-  --panel-border: rgba(0, 240, 255, 0.25);
-  --text: #f0f4ff;
-  --text-dim: #8fa0c0;
+  --cockpit-metal: #080b14;
+  --glass-tint: rgba(0, 240, 255, 0.05);
+  --hud-bg: rgba(6, 10, 22, 0.9);
+  --hud-border: rgba(0, 240, 255, 0.4);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  background: var(--space-dark);
-  color: var(--text);
+  background: #020307;
+  color: #fff;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
   user-select: none;
 }
 
-/* 3D WebGL Canvas */
 #webgl-canvas {
   position: fixed;
   top: 0;
@@ -39,601 +37,619 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 1;
-  outline: none;
 }
 
-/* Sci-Fi HUD Overlay */
-.hud-overlay {
-  position: relative;
-  z-index: 10;
+/* Spaceship Cockpit Window Frame Overlay */
+.cockpit-frame {
+  position: fixed;
+  inset: 0;
   pointer-events: none;
+  z-index: 5;
+  background: 
+    radial-gradient(circle at 50% 50%, transparent 65%, rgba(4, 6, 12, 0.75) 90%, #03050a 100%),
+    linear-gradient(to bottom, rgba(8, 12, 24, 0.8) 0%, transparent 12%, transparent 88%, rgba(8, 12, 24, 0.95) 100%);
+  border: 12px solid #080d1a;
+  box-shadow: inset 0 0 60px rgba(0, 240, 255, 0.15);
 }
 
+/* Cockpit Canopy Struts */
+.cockpit-strut-left {
+  position: fixed;
+  top: 0;
+  left: 22%;
+  width: 8px;
+  height: 100vh;
+  background: linear-gradient(90deg, #050812, #18233c, #050812);
+  transform: skewX(-14deg);
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0.85;
+}
+.cockpit-strut-right {
+  position: fixed;
+  top: 0;
+  right: 22%;
+  width: 8px;
+  height: 100vh;
+  background: linear-gradient(90deg, #050812, #18233c, #050812);
+  transform: skewX(14deg);
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0.85;
+}
+
+/* Minimalist HUD Header */
 .hud-header {
-  padding: 18px 24px;
+  position: fixed;
+  top: 18px;
+  left: 30px;
+  right: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(180deg, rgba(5, 6, 12, 0.9) 0%, transparent 100%);
-  pointer-events: auto;
+  z-index: 20;
+  pointer-events: none;
 }
 .hud-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 900;
   letter-spacing: 3px;
   background: linear-gradient(90deg, #fff, var(--neon-cyan), var(--neon-gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  pointer-events: auto;
 }
-.hud-badge {
-  font-size: 10px;
-  letter-spacing: 2px;
-  padding: 4px 10px;
-  background: rgba(0, 240, 255, 0.12);
-  border: 1px solid var(--neon-cyan);
-  border-radius: 4px;
-  color: var(--neon-cyan);
+.hud-status {
   font-family: 'Orbitron', monospace;
-}
-
-/* 3D Drag Tip */
-.control-tip {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Orbitron', sans-serif;
   font-size: 11px;
+  letter-spacing: 2px;
   color: var(--neon-cyan);
-  background: rgba(5, 8, 18, 0.85);
-  border: 1px solid rgba(0, 240, 255, 0.3);
-  padding: 8px 18px;
-  border-radius: 99px;
-  letter-spacing: 1.5px;
-  backdrop-filter: blur(8px);
-  z-index: 20;
-  pointer-events: auto;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid var(--neon-cyan);
+  padding: 4px 12px;
+  border-radius: 4px;
 }
 
-/* Quick Agent Selector Bar */
-.crew-bar {
+/* Flight Deck Crew Station Buttons */
+.station-selector {
   position: fixed;
-  top: 76px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 12px;
   z-index: 20;
-  pointer-events: auto;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 95vw;
 }
-.crew-btn {
-  background: rgba(10, 16, 32, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+.station-btn {
+  background: rgba(8, 14, 28, 0.85);
+  border: 1px solid rgba(0, 240, 255, 0.35);
   color: #fff;
-  padding: 8px 14px;
-  border-radius: 8px;
   font-family: 'Orbitron', sans-serif;
   font-size: 11px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
   cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
-  gap: 6px;
-  backdrop-filter: blur(10px);
-  transition: all 0.25s;
+  gap: 8px;
 }
-.crew-btn:hover, .crew-btn.active {
-  background: rgba(0, 240, 255, 0.25);
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
-  transform: translateY(-2px);
+.station-btn:hover, .station-btn.active {
+  background: var(--neon-cyan);
+  color: #000;
+  border-color: #fff;
+  box-shadow: 0 0 25px var(--neon-cyan);
+  transform: translateY(-3px);
 }
 
-/* Hologram Dossier Window */
-.dossier-window {
+/* Agent Dedicated Chamber / Room View Overlay */
+.chamber-view {
   position: fixed;
-  bottom: 60px;
-  right: 24px;
-  width: 440px;
-  max-width: calc(100vw - 48px);
-  max-height: 70vh;
-  background: var(--panel-bg);
-  border: 1px solid var(--panel-border);
-  border-radius: 14px;
-  backdrop-filter: blur(16px);
-  padding: 20px;
-  overflow-y: auto;
-  z-index: 25;
-  pointer-events: auto;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.15);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(10, 16, 32, 0.88) 0%, rgba(3, 5, 12, 0.98) 100%);
+  backdrop-filter: blur(14px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.05);
 }
-.dossier-window::-webkit-scrollbar { width: 5px; }
-.dossier-window::-webkit-scrollbar-thumb { background: var(--panel-border); border-radius: 10px; }
+.chamber-view.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
 
-.dossier-header {
+.chamber-terminal {
+  width: 640px;
+  max-width: 92vw;
+  max-height: 85vh;
+  background: var(--hud-bg);
+  border: 2px solid var(--hud-border);
+  border-radius: 18px;
+  padding: 26px;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 240, 255, 0.25);
+  position: relative;
+}
+.chamber-terminal::-webkit-scrollbar { width: 5px; }
+.chamber-terminal::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 10px; }
+
+.chamber-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
 }
-.dossier-name {
+.chamber-name {
   font-family: 'Orbitron', sans-serif;
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 900;
   color: var(--neon-cyan);
-}
-.dossier-status {
-  font-size: 10px;
-  font-family: 'Orbitron', monospace;
-  color: var(--neon-green);
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
+}
+.btn-exit-chamber {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-exit-chamber:hover {
+  background: #ff3366;
+  border-color: #ff3366;
+  box-shadow: 0 0 15px #ff3366;
 }
 
-.hud-card {
-  background: rgba(18, 25, 46, 0.6);
+.chamber-card {
+  background: rgba(14, 22, 44, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 14px;
 }
-.hud-label {
+.chamber-label {
   font-family: 'Orbitron', monospace;
-  font-size: 9.5px;
+  font-size: 10.5px;
   color: var(--neon-gold);
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
-.hud-text {
-  font-size: 12.5px;
-  line-height: 1.6;
+.chamber-text {
+  font-size: 13.5px;
+  line-height: 1.7;
   color: #e2e8f0;
   white-space: pre-wrap;
   word-break: break-word;
 }
 
-.btn-action {
+.btn-copy-terminal {
   width: 100%;
-  background: linear-gradient(90deg, rgba(0, 240, 255, 0.2), rgba(189, 0, 255, 0.2));
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.25), rgba(189, 0, 255, 0.25));
   border: 1px solid var(--neon-cyan);
   color: #fff;
   font-family: 'Orbitron', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 14px;
   transition: all 0.2s;
 }
-.btn-action:hover {
+.btn-copy-terminal:hover {
   background: var(--neon-cyan);
   color: #000;
-  box-shadow: 0 0 20px var(--neon-cyan);
+  box-shadow: 0 0 25px var(--neon-cyan);
 }
 </style>
 </head>
 <body>
 
-<!-- Three.js 3D WebGL Canvas -->
+<!-- Three.js Canvas -->
 <canvas id="webgl-canvas"></canvas>
 
-<!-- HUD Overlay UI -->
-<div class="hud-overlay">
-  <header class="hud-header">
-    <div class="hud-title">
-      <span>🌌</span> ORBITAL SPACE STATION • DRAMA CEO
-    </div>
-    <div class="hud-badge" id="hud-status">STATUS: ONLINE 3D</div>
-  </header>
+<!-- Cockpit Frame Overlay -->
+<div class="cockpit-frame"></div>
+<div class="cockpit-strut-left"></div>
+<div class="cockpit-strut-right"></div>
 
-  <!-- Crew Navigation Bar -->
-  <div class="crew-bar">
-    <button class="crew-btn active" onclick="focusAgent('ceo', this)">👑 CEO AGUNG</button>
-    <button class="crew-btn" onclick="focusAgent('rendra', this)">💡 RENDRA</button>
-    <button class="crew-btn" onclick="focusAgent('karin', this)">✍️ KARIN</button>
-    <button class="crew-btn" onclick="focusAgent('gilang', this)">🎬 GILANG</button>
-    <button class="crew-btn" onclick="focusAgent('vina', this)">🚀 VINA</button>
-  </div>
+<!-- Top HUD Header -->
+<header class="hud-header">
+  <div class="hud-title">🚀 SPACESHIRECTOR • DRAMA CEO</div>
+  <div class="hud-status">KOKPIT UTAMA • STATUS: RESTING ZERO-G</div>
+</header>
 
-  <!-- Interactive 3D Orbit Tip -->
-  <div class="control-tip">
-    🖱️ DRAG / SWIPE UNTUK MEMUTAR 3D SPACE STATION • KLIK POD KRU UNTUK LIHAT NASKAH
-  </div>
+<!-- Bottom Cockpit Station Bar -->
+<nav class="station-selector">
+  <button class="station-btn" onclick="enterChamber('ceo')">👑 RUANGAN CEO AGUNG</button>
+  <button class="station-btn" onclick="enterChamber('rendra')">💡 RUANGAN RENDRA (PLOT)</button>
+  <button class="station-btn" onclick="enterChamber('karin')">✍️ RUANGAN KARIN (NASKAH)</button>
+  <button class="station-btn" onclick="enterChamber('gilang')">🎬 RUANGAN GILANG (VISUAL)</button>
+  <button class="station-btn" onclick="enterChamber('vina')">🚀 RUANGAN VINA (TAGAR)</button>
+</nav>
 
-  <!-- Holographic Dossier Panel -->
-  <aside class="dossier-window" id="dossier">
-    <div class="dossier-header">
+<!-- Agent Dedicated Room Overlay -->
+<div class="chamber-view" id="chamber-modal">
+  <div class="chamber-terminal">
+    <div class="chamber-top">
       <div>
-        <div class="dossier-name" id="dossier-title">CEO AGUNG</div>
-        <div style="font-size:11px; color:var(--text-dim);" id="dossier-role">Director & Orbital Commander</div>
+        <div class="chamber-name" id="room-title">RUANGAN AGENT</div>
+        <div style="font-size:11px; color:var(--neon-green); font-family:'Orbitron'; margin-top:3px;">
+          ● KRU SELESAI BEKERJA & ISTIRAHAT
+        </div>
       </div>
-      <div class="dossier-status" id="dossier-state">
-        <span style="display:inline-block; width:6px; height:6px; background:var(--neon-green); border-radius:50%; box-shadow:0 0 8px var(--neon-green);"></span>
-        RESTING IN ZERO-G
-      </div>
+      <button class="btn-exit-chamber" onclick="exitChamber()">⬅️ KEMBALI KE KOKPIT</button>
     </div>
-    <div id="dossier-content">
+    <div id="room-content">
       <!-- Injected from data -->
     </div>
-    <button class="btn-action" id="btn-copy-dossier" onclick="copyDossier()">📋 SALIN DATA AGEN INI</button>
-  </aside>
+    <button class="btn-copy-terminal" id="btn-copy-room" onclick="copyRoomData()">📋 SALIN DATA DARI RUANGAN INI</button>
+  </div>
 </div>
 
 <script>
-// ==================== 1. THREE.JS 3D UNIVERSE ====================
+// ==================== 1. THREE.JS SPACESHIRECTOR COCKPIT ====================
 let scene, camera, renderer;
-let planet, planetClouds, stationRing, starField;
-let pods = {};
-let currentFocus = 'ceo';
-let isDragging = false, prevMousePos = { x: 0, y: 0 };
-let targetRotY = 0, targetRotX = 0.3;
+let starField, passingPlanet, passingMoon, ringsMesh;
+let crewChairs = {};
+let targetCamPos = { x: 0, y: 1, z: 8 };
+let targetLookAt = { x: 0, y: 1.5, z: -50 };
 
-const AGENT_DATA_3D = {
-  ceo: { name: "CEO AGUNG", role: "Orbital Studio Commander", color: 0xffd700, angle: 0 },
-  rendra: { name: "RENDRA", role: "Space Story Researcher", color: 0xff4081, angle: (Math.PI * 2 / 5) * 1 },
-  karin: { name: "KARIN", role: "Screenwriter & Holo-Prompter", color: 0x00f0ff, angle: (Math.PI * 2 / 5) * 2 },
-  gilang: { name: "GILANG", role: "Visual & VFX Director", color: 0x00ff66, angle: (Math.PI * 2 / 5) * 3 },
-  vina: { name: "VINA", role: "Galactic Social Viralizer", color: 0xbd00ff, angle: (Math.PI * 2 / 5) * 4 }
+const CREW_CONFIG = {
+  ceo: { name: "CEO AGUNG", role: "Komandan Eksekutif & Pengarah", color: 0xffd700, x: 0, z: -2 },
+  rendra: { name: "RENDRA", role: "Riset Plot & Skenario Viral", color: 0xff4081, x: -7, z: -8 },
+  karin: { name: "KARIN", role: "Penulis Naskah & Hook 60s", color: 0x00f0ff, x: -3.5, z: -14 },
+  gilang: { name: "GILANG", role: "Visual Prompt & Audio FX Director", color: 0x00ff66, x: 3.5, z: -14 },
+  vina: { name: "VINA", role: "Distribusi, Caption & Hashtag Viral", color: 0xbd00ff, x: 7, z: -8 }
 };
 
-function init3D() {
+function initCockpit3D() {
   const canvas = document.getElementById('webgl-canvas');
   scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x05060c, 0.002);
+  scene.fog = new THREE.FogExp2(0x020307, 0.001);
 
-  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
-  camera.position.set(0, 18, 42);
+  camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 2000);
+  camera.position.set(0, 1.2, 10);
 
   renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   // Lighting
-  const ambientLight = new THREE.AmbientLight(0x223355, 1.2);
+  const ambientLight = new THREE.AmbientLight(0x1a2638, 1.5);
   scene.add(ambientLight);
 
-  const sunLight = new THREE.DirectionalLight(0xffeedd, 2.5);
-  sunLight.position.set(100, 80, 50);
-  scene.add(sunLight);
+  const starlight = new THREE.DirectionalLight(0xddeeff, 2.2);
+  starlight.position.set(20, 40, -50);
+  scene.add(starlight);
 
-  const rimLight = new THREE.PointLight(0x00f0ff, 3, 100);
-  rimLight.position.set(0, 5, 0);
-  scene.add(rimLight);
-
-  // 1. Starfield Particles (Deep Space)
+  // 1. Warp Starfield (Moving stars past the cockpit)
   const starGeo = new THREE.BufferGeometry();
-  const starCount = 3500;
-  const starPos = new Float32Array(starCount * 3);
-  for (let i = 0; i < starCount * 3; i++) {
-    starPos[i] = (Math.random() - 0.5) * 1200;
+  const starCount = 4000;
+  const starCoords = new Float32Array(starCount * 3);
+  for (let i = 0; i < starCount * 3; i += 3) {
+    starCoords[i] = (Math.random() - 0.5) * 800;
+    starCoords[i+1] = (Math.random() - 0.5) * 600;
+    starCoords[i+2] = -Math.random() * 800;
   }
-  starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
-  const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 1.2, transparent: true, opacity: 0.85 });
+  starGeo.setAttribute('position', new THREE.BufferAttribute(starCoords, 3));
+  const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 1.4, transparent: true, opacity: 0.9 });
   starField = new THREE.Points(starGeo, starMat);
   scene.add(starField);
 
-  // 2. Giant Exoplanet in Background
-  const planetGeo = new THREE.SphereGeometry(32, 64, 64);
+  // 2. Cosmic Passing Planet Outside the Window
+  const planetGeo = new THREE.SphereGeometry(45, 64, 64);
   const planetMat = new THREE.MeshStandardMaterial({
-    color: 0x1a365d,
-    roughness: 0.7,
-    metalness: 0.1,
-    emissive: 0x051329,
-    emissiveIntensity: 0.4
+    color: 0x1e3a8a,
+    emissive: 0x0c1e3d,
+    roughness: 0.8,
+    metalness: 0.2
   });
-  planet = new THREE.Mesh(planetGeo, planetMat);
-  planet.position.set(-60, -30, -120);
-  scene.add(planet);
+  passingPlanet = new THREE.Mesh(planetGeo, planetMat);
+  passingPlanet.position.set(-160, 20, -380);
+  scene.add(passingPlanet);
 
-  // Planet Atmosphere Glow Ring
-  const ringGeo = new THREE.RingGeometry(38, 55, 64);
-  const ringMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff, side: THREE.DoubleSide, transparent: true, opacity: 0.25 });
-  const pRing = new THREE.Mesh(ringGeo, ringMat);
-  pRing.rotation.x = Math.PI / 2.3;
-  planet.add(pRing);
+  // Planet Rings
+  const ringGeo = new THREE.RingGeometry(55, 80, 64);
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff, side: THREE.DoubleSide, transparent: true, opacity: 0.35 });
+  ringsMesh = new THREE.Mesh(ringGeo, ringMat);
+  ringsMesh.rotation.x = Math.PI / 2.4;
+  passingPlanet.add(ringsMesh);
 
-  // 3. Space Station Command Deck (Sci-Fi Hologram Platform)
-  const platformGeo = new THREE.CylinderGeometry(24, 26, 1.5, 32);
-  const platformMat = new THREE.MeshStandardMaterial({
-    color: 0x0d1424,
-    metalness: 0.85,
-    roughness: 0.25
-  });
-  const platform = new THREE.Mesh(platformGeo, platformMat);
-  platform.position.y = -1;
-  scene.add(platform);
+  // Passing Satellite Moon
+  const moonGeo = new THREE.SphereGeometry(8, 32, 32);
+  const moonMat = new THREE.MeshStandardMaterial({ color: 0xffaa44, roughness: 0.9 });
+  passingMoon = new THREE.Mesh(moonGeo, moonMat);
+  passingMoon.position.set(70, -25, -280);
+  scene.add(passingMoon);
 
-  // Glowing Outer Energy Ring
-  const energyRingGeo = new THREE.TorusGeometry(24.5, 0.2, 16, 100);
-  const energyRingMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff });
-  stationRing = new THREE.Mesh(energyRingGeo, energyRingMat);
-  stationRing.rotation.x = Math.PI / 2;
-  scene.add(stationRing);
+  // 3. Cockpit Floor & Console Desks
+  const floorGeo = new THREE.PlaneGeometry(50, 60);
+  const floorMat = new THREE.MeshStandardMaterial({ color: 0x060912, roughness: 0.3, metalness: 0.8 });
+  const floor = new THREE.Mesh(floorGeo, floorMat);
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.y = -2;
+  scene.add(floor);
 
-  // Central Hologram Core
-  const coreGeo = new THREE.OctahedronGeometry(2.5, 0);
-  const coreMat = new THREE.MeshBasicMaterial({ color: 0xffd700, wireframe: true });
-  const holoCore = new THREE.Mesh(coreGeo, coreMat);
-  holoCore.position.set(0, 4, 0);
-  scene.add(holoCore);
+  // Glowing Floor Grid Lines
+  const gridHelper = new THREE.GridHelper(50, 25, 0x00f0ff, 0x112233);
+  gridHelper.position.y = -1.98;
+  scene.add(gridHelper);
 
-  // 4. Build 3D Astronaut / Crew Pods for 5 Agents
-  Object.entries(AGENT_DATA_3D).forEach(([id, info]) => {
-    const podGroup = new THREE.Group();
-    const radius = id === 'ceo' ? 0 : 16;
-    const x = Math.sin(info.angle) * radius;
-    const z = Math.cos(info.angle) * radius;
-    podGroup.position.set(x, 0, z);
+  // 4. Crew Cockpit Stations (Chairs + Hologram Consoles)
+  Object.entries(CREW_CONFIG).forEach(([id, cfg]) => {
+    const station = new THREE.Group();
+    station.position.set(cfg.x, -1.8, cfg.z);
 
-    // Pod Pedestal
-    const pedGeo = new THREE.CylinderGeometry(2.2, 2.8, 1.2, 16);
-    const pedMat = new THREE.MeshStandardMaterial({ color: 0x11192e, metalness: 0.9, roughness: 0.2 });
-    const ped = new THREE.Mesh(pedGeo, pedMat);
-    podGroup.add(ped);
+    // Pilot Chair
+    const chairBase = new THREE.Mesh(
+      new THREE.CylinderGeometry(1.2, 1.4, 0.5, 16),
+      new THREE.MeshStandardMaterial({ color: 0x161f30, metalness: 0.9 })
+    );
+    station.add(chairBase);
 
-    // Holographic Base Ring
-    const haloGeo = new THREE.RingGeometry(2.4, 2.7, 32);
-    const haloMat = new THREE.MeshBasicMaterial({ color: info.color, side: THREE.DoubleSide });
-    const halo = new THREE.Mesh(haloGeo, haloMat);
-    halo.rotation.x = Math.PI / 2;
-    halo.position.y = 0.65;
-    podGroup.add(halo);
+    const chairBack = new THREE.Mesh(
+      new THREE.BoxGeometry(1.8, 2.8, 0.4),
+      new THREE.MeshStandardMaterial({ color: 0x1c2840, roughness: 0.5 })
+    );
+    chairBack.position.set(0, 1.8, -0.7);
+    station.add(chairBack);
 
-    // Stylized 3D Astronaut Avatar in Zero-G (Body + Visor)
-    const astro = new THREE.Group();
-    astro.position.y = 3.5;
+    // Relaxing Crew Figure (Zero-G Rest Animation)
+    const astronaut = new THREE.Group();
+    astronaut.position.set(0, 1.6, 0);
 
-    // Helmet & Visor
-    const headGeo = new THREE.SphereGeometry(1, 16, 16);
-    const headMat = new THREE.MeshStandardMaterial({ color: 0xdde6ed, roughness: 0.3 });
-    const head = new THREE.Mesh(headGeo, headMat);
-    astro.add(head);
+    const helmet = new THREE.Mesh(
+      new THREE.SphereGeometry(0.7, 16, 16),
+      new THREE.MeshStandardMaterial({ color: 0xdde6ed, roughness: 0.3 })
+    );
+    astronaut.add(helmet);
 
-    const visorGeo = new THREE.SphereGeometry(0.85, 16, 16, 0, Math.PI * 2, 0, Math.PI / 2);
-    const visorMat = new THREE.MeshBasicMaterial({ color: info.color });
-    const visor = new THREE.Mesh(visorGeo, visorMat);
+    const visor = new THREE.Mesh(
+      new THREE.SphereGeometry(0.55, 16, 16, 0, Math.PI * 2, 0, Math.PI / 2),
+      new THREE.MeshBasicMaterial({ color: cfg.color })
+    );
     visor.rotation.x = Math.PI / 2;
-    visor.position.set(0, 0, 0.3);
-    astro.add(visor);
+    visor.position.set(0, 0, 0.25);
+    astronaut.add(visor);
 
-    // Torso / Spacesuit
-    const bodyGeo = new THREE.CylinderGeometry(0.9, 1.1, 1.8, 16);
-    const bodyMat = new THREE.MeshStandardMaterial({ color: 0x2b384e, roughness: 0.5 });
-    const body = new THREE.Mesh(bodyGeo, bodyMat);
-    body.position.y = -1.4;
-    astro.add(body);
+    station.add(astronaut);
 
-    // Floating Holo-Tablet (Showing Resting State)
-    const tabGeo = new THREE.BoxGeometry(1.2, 0.8, 0.05);
-    const tabMat = new THREE.MeshBasicMaterial({ color: info.color, wireframe: true });
-    const tab = new THREE.Mesh(tabGeo, tabMat);
-    tab.position.set(0, -1.2, 1.1);
-    astro.add(tab);
+    // Holographic Flight Panel
+    const holoScreen = new THREE.Mesh(
+      new THREE.PlaneGeometry(2.2, 1.2),
+      new THREE.MeshBasicMaterial({ color: cfg.color, side: THREE.DoubleSide, transparent: true, opacity: 0.75, wireframe: true })
+    );
+    holoScreen.position.set(0, 1.6, 1.2);
+    holoScreen.rotation.x = -Math.PI / 6;
+    station.add(holoScreen);
 
-    podGroup.add(astro);
-    scene.add(podGroup);
-
-    pods[id] = { group: podGroup, astro, halo, info };
+    scene.add(station);
+    crewChairs[id] = { group: station, astronaut, holo: holoScreen, cfg };
   });
 
-  // Event Listeners for 3D Camera Controls
-  canvas.addEventListener('mousedown', onPointerDown);
-  window.addEventListener('mousemove', onPointerMove);
-  window.addEventListener('mouseup', onPointerUp);
-
-  canvas.addEventListener('touchstart', onTouchStart, { passive: false });
-  window.addEventListener('touchmove', onTouchMove, { passive: false });
-  window.addEventListener('touchend', onPointerUp);
-
-  window.addEventListener('resize', onWindowResize);
+  window.addEventListener('resize', onResize);
 }
 
-function onPointerDown(e) { isDragging = true; prevMousePos = { x: e.clientX, y: e.clientY }; }
-function onTouchStart(e) { if(e.touches.length === 1) { isDragging = true; prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY }; } }
-
-function onPointerMove(e) {
-  if (!isDragging) return;
-  const deltaX = e.clientX - prevMousePos.x;
-  const deltaY = e.clientY - prevMousePos.y;
-  targetRotY += deltaX * 0.005;
-  targetRotX = Math.max(0.1, Math.min(1.1, targetRotX + deltaY * 0.005));
-  prevMousePos = { x: e.clientX, y: e.clientY };
-}
-
-function onTouchMove(e) {
-  if (!isDragging || e.touches.length !== 1) return;
-  const deltaX = e.touches[0].clientX - prevMousePos.x;
-  const deltaY = e.touches[0].clientY - prevMousePos.y;
-  targetRotY += deltaX * 0.005;
-  targetRotX = Math.max(0.1, Math.min(1.1, targetRotX + deltaY * 0.005));
-  prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-  e.preventDefault();
-}
-
-function onPointerUp() { isDragging = false; }
-
-function onWindowResize() {
+function onResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-// 3D Render Loop
+// Animation Loop
 let clock = new THREE.Clock();
-function animate3D() {
-  requestAnimationFrame(animate3D);
-  const time = clock.getElapsedTime();
+function animateCockpit() {
+  requestAnimationFrame(animateCockpit);
+  const t = clock.getElapsedTime();
 
-  // Rotate galaxy & planet
-  if (planet) planet.rotation.y = time * 0.04;
-  if (stationRing) stationRing.rotation.z = time * 0.1;
-  if (starField) starField.rotation.y = time * 0.005;
+  // 1. Move warp stars past the spaceship
+  const positions = starField.geometry.attributes.position.array;
+  for (let i = 2; i < positions.length; i += 3) {
+    positions[i] += 0.8;
+    if (positions[i] > 10) {
+      positions[i] = -800;
+    }
+  }
+  starField.geometry.attributes.position.needsUpdate = true;
 
-  // Zero-G Astronaut Floating & Relaxation Animation
-  Object.values(pods).forEach((p, idx) => {
-    p.astro.position.y = 3.5 + Math.sin(time * 1.5 + idx) * 0.35;
-    p.astro.rotation.y = Math.sin(time * 0.8 + idx) * 0.2;
-    p.astro.rotation.z = Math.cos(time * 1.2 + idx) * 0.06;
-    p.halo.rotation.z = time * 0.5;
+  // 2. Slow Passing Planet Motion outside the window
+  if (passingPlanet) {
+    passingPlanet.position.x = -160 + Math.sin(t * 0.05) * 80;
+    passingPlanet.position.z = -380 + Math.cos(t * 0.05) * 60;
+    passingPlanet.rotation.y = t * 0.02;
+  }
+  if (passingMoon) {
+    passingMoon.position.x = 70 + Math.cos(t * 0.08) * 40;
+    passingMoon.rotation.y = t * 0.04;
+  }
+
+  // 3. Zero-G Relaxing Breathing Effect for Crew
+  Object.values(crewChairs).forEach((c, idx) => {
+    c.astronaut.position.y = 1.6 + Math.sin(t * 1.6 + idx) * 0.12;
+    c.astronaut.rotation.z = Math.sin(t * 1.1 + idx) * 0.04;
+    c.holo.position.y = 1.6 + Math.cos(t * 2 + idx) * 0.05;
   });
 
-  // Smooth Camera Orbit
-  camera.position.x = Math.sin(targetRotY) * Math.cos(targetRotX) * 44;
-  camera.position.z = Math.cos(targetRotY) * Math.cos(targetRotX) * 44;
-  camera.position.y = Math.sin(targetRotX) * 44;
-  camera.lookAt(0, 3, 0);
+  // 4. Smooth Camera Glide
+  camera.position.x += (targetCamPos.x - camera.position.x) * 0.05;
+  camera.position.y += (targetCamPos.y - camera.position.y) * 0.05;
+  camera.position.z += (targetCamPos.z - camera.position.z) * 0.05;
+  camera.lookAt(targetLookAt.x, targetLookAt.y, targetLookAt.z);
 
   renderer.render(scene, camera);
 }
 
-// ==================== 2. HUD & DATA SYNC ====================
-let liveStory = null;
+// ==================== 2. ROOM TRANSITION & MODAL ====================
+let liveData = null;
+let currentRoomId = null;
 
-function focusAgent(id, btn) {
-  document.querySelectorAll('.crew-btn').forEach(b => b.classList.remove('active'));
-  if (btn) btn.classList.add('active');
-  currentFocus = id;
+function enterChamber(id) {
+  currentRoomId = id;
+  const cfg = CREW_CONFIG[id];
 
-  // Rotate 3D view towards this crew pod
-  const pod = pods[id];
-  if (pod) {
-    targetRotY = -pod.info.angle;
-    targetRotX = 0.35;
-  }
-  updateDossier();
+  // Glide 3D camera smoothly into this crew's station
+  targetCamPos = { x: cfg.x, y: 0.5, z: cfg.z + 4 };
+  targetLookAt = { x: cfg.x, y: 0.2, z: cfg.z };
+
+  // Update button active state
+  document.querySelectorAll('.station-btn').forEach((b, idx) => {
+    b.classList.toggle('active', Object.keys(CREW_CONFIG)[idx] === id);
+  });
+
+  // Open Room Console
+  document.getElementById('room-title').innerHTML = `<span>🚀</span> RUANGAN ${cfg.name}`;
+  renderRoomData(id);
+  setTimeout(() => {
+    document.getElementById('chamber-modal').classList.add('active');
+  }, 350);
 }
 
-function updateDossier() {
-  const title = document.getElementById('dossier-title');
-  const role = document.getElementById('dossier-role');
-  const body = document.getElementById('dossier-content');
-  const p = AGENT_DATA_3D[currentFocus];
+function exitChamber() {
+  // Glide 3D camera back to panoramic cockpit view
+  targetCamPos = { x: 0, y: 1.2, z: 10 };
+  targetLookAt = { x: 0, y: 1.5, z: -50 };
 
-  title.textContent = p.name;
-  role.textContent = p.role;
+  document.getElementById('chamber-modal').classList.remove('active');
+  document.querySelectorAll('.station-btn').forEach(b => b.classList.remove('active'));
+}
 
-  if (!liveStory) {
-    body.innerHTML = '<div class="hud-card"><div class="hud-text">Mengambil data naskah luar angkasa dari sistem...</div></div>';
+function renderRoomData(id) {
+  const container = document.getElementById('room-content');
+  if (!liveData) {
+    container.innerHTML = '<div class="chamber-card"><div class="chamber-text">Menyinkronkan data dari stasiun orbit...</div></div>';
     return;
   }
 
-  const d = liveStory;
+  const d = liveData;
 
-  if (currentFocus === 'ceo') {
-    body.innerHTML = `
-      <div class="hud-card">
-        <div class="hud-label">Misi & Kategori</div>
-        <div class="hud-text" style="color:var(--neon-gold); font-weight:700;">${d.kategori || 'Sultan Menyamar'}</div>
+  if (id === 'ceo') {
+    container.innerHTML = `
+      <div class="chamber-card">
+        <div class="chamber-label">Misi Saat Ini</div>
+        <div class="chamber-text" style="color:var(--neon-gold); font-size:16px; font-weight:700;">${d.kategori || 'Sultan Menyamar'}</div>
       </div>
-      <div class="hud-card">
-        <div class="hud-label">Judul Utama</div>
-        <div class="hud-text" style="font-weight:700;">${d.ide?.judul || '-'}</div>
+      <div class="chamber-card">
+        <div class="chamber-label">Judul Cerita Terpilih</div>
+        <div class="chamber-text" style="font-size:15px; font-weight:600;">${d.ide?.judul || '-'}</div>
       </div>
-      <div class="hud-card">
-        <div class="hud-label">Status Kru Orbit</div>
-        <div class="hud-text">Semua 4 kru telah menyelesaikan misi produksi dan sedang bersantai di Zero-G Chamber.</div>
+      <div class="chamber-card">
+        <div class="chamber-label">Laporan Komandan</div>
+        <div class="chamber-text">Seluruh kru (Rendra, Karin, Gilang, Vina) telah merampungkan tugas mereka. Naskah dan visual sinematik siap dieksekusi.</div>
       </div>
     `;
-  } else if (currentFocus === 'rendra') {
-    body.innerHTML = `
-      <div class="hud-card">
-        <div class="hud-label">Premis & Plot</div>
-        <div class="hud-text" style="color:var(--neon-cyan); font-weight:700;">${d.ide?.judul}</div>
+  } else if (id === 'rendra') {
+    container.innerHTML = `
+      <div class="chamber-card">
+        <div class="chamber-label">Riset Premis & Plot Viral</div>
+        <div class="chamber-text" style="color:var(--neon-cyan); font-weight:700; font-size:15px;">${d.ide?.judul}</div>
       </div>
-      <div class="hud-card">
-        <div class="hud-label">Karakter Utama</div>
-        <div class="hud-text">
+      <div class="chamber-card">
+        <div class="chamber-label">Profil Karakter</div>
+        <div class="chamber-text">
           <b>Protagonis:</b> ${d.ide?.karakter?.protagonis}<br>
           <b>Antagonis:</b> ${d.ide?.karakter?.antagonis}
         </div>
       </div>
-      <div class="hud-card">
-        <div class="hud-label">Plot Twist & Karma</div>
-        <div class="hud-text">${d.ide?.plot_twist}</div>
+      <div class="chamber-card">
+        <div class="chamber-label">Adegan Hinaan & Plot Twist</div>
+        <div class="chamber-text">${d.ide?.situasi_penghinaan}<br><br><b>Plot Twist:</b> ${d.ide?.plot_twist}</div>
       </div>
     `;
-  } else if (currentFocus === 'karin') {
-    const lines = (d.naskah?.timeline || []).map(t => `
-      <div style="border-left:2px solid var(--neon-cyan); padding-left:8px; margin-bottom:8px;">
-        <div style="font-size:10px; color:var(--neon-cyan); font-family:monospace;">${t.detik} • ${t.teks_layar}</div>
-        <div class="hud-text">${t.dialog_narasi}</div>
+  } else if (id === 'karin') {
+    const dialogs = (d.naskah?.timeline || []).map(t => `
+      <div style="border-left:2px solid var(--neon-cyan); padding-left:10px; margin-bottom:10px; background:rgba(0,240,255,0.04); padding-top:4px; padding-bottom:4px;">
+        <div style="font-size:11px; color:var(--neon-cyan); font-family:monospace; font-weight:700;">${t.detik} • ${t.teks_layar}</div>
+        <div class="chamber-text" style="margin-top:2px;">${t.dialog_narasi}</div>
       </div>
     `).join('');
-    body.innerHTML = `
-      <div class="hud-card" style="border-color:var(--neon-cyan);">
-        <div class="hud-label" style="color:var(--neon-cyan);">Hook 3 Detik Pertama</div>
-        <div class="hud-text" style="font-weight:700;">"${d.naskah?.hook_awal}"</div>
+    container.innerHTML = `
+      <div class="chamber-card" style="border-color:var(--neon-cyan);">
+        <div class="chamber-label" style="color:var(--neon-cyan);">Hook 3 Detik Pertama</div>
+        <div class="chamber-text" style="font-weight:700; font-size:15px;">"${d.naskah?.hook_awal}"</div>
       </div>
-      <div class="hud-card">
-        <div class="hud-label">Voiceover Lengkap (Text-to-Speech)</div>
-        <div class="hud-text" style="background:rgba(0,0,0,0.4); padding:8px; border-radius:4px;">${d.naskah?.naskah_voiceover_lengkap}</div>
+      <div class="chamber-card">
+        <div class="chamber-label">Teks Voiceover (Text-to-Speech)</div>
+        <div class="chamber-text" style="background:rgba(0,0,0,0.5); padding:10px; border-radius:6px;">${d.naskah?.naskah_voiceover_lengkap}</div>
       </div>
-      <div class="hud-card">
-        <div class="hud-label">Rincian Scene Per Detik</div>
-        ${lines}
+      <div class="chamber-card">
+        <div class="chamber-label">Rincian Timeline & Aksi Visual</div>
+        ${dialogs}
       </div>
     `;
-  } else if (currentFocus === 'gilang') {
+  } else if (id === 'gilang') {
     const shots = (d.visual_prompts?.shots || []).map(s => `
-      <div style="border-left:2px solid var(--neon-green); padding-left:8px; margin-bottom:10px;">
-        <div style="font-size:10px; color:var(--neon-green); font-family:monospace;">Shot ${s.shot} (${s.timecode}) • SFX: ${s.sound_fx}</div>
-        <div class="hud-text" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.4); padding:6px; border-radius:4px; margin-top:3px;">${s.prompt_en}</div>
+      <div style="border-left:2px solid var(--neon-green); padding-left:10px; margin-bottom:12px; background:rgba(0,255,102,0.04); padding-top:4px; padding-bottom:4px;">
+        <div style="font-size:11px; color:var(--neon-green); font-family:monospace; font-weight:700;">Shot ${s.shot} (${s.timecode}) • SFX: ${s.sound_fx}</div>
+        <div class="chamber-text" style="font-family:monospace; font-size:12px; background:rgba(0,0,0,0.5); padding:8px; border-radius:4px; margin-top:4px;">${s.prompt_en}</div>
+        <div style="font-size:11px; color:#8fa0c0; margin-top:4px;">🎥 Kamera: ${s.camera_motion}</div>
       </div>
     `).join('');
-    body.innerHTML = `
-      <div class="hud-card">
-        <div class="hud-label">Konsistensi Karakter</div>
-        <div class="hud-text">${d.visual_prompts?.character_consistency}</div>
+    container.innerHTML = `
+      <div class="chamber-card">
+        <div class="chamber-label">DNA Konsistensi Karakter</div>
+        <div class="chamber-text">${d.visual_prompts?.character_consistency}</div>
       </div>
-      <div class="hud-card">
-        <div class="hud-label">Prompt Video AI Sinematik (Kling / Runway)</div>
+      <div class="chamber-card">
+        <div class="chamber-label">6 Prompt Video Sinematik (Kling AI / Runway)</div>
         ${shots}
       </div>
     `;
-  } else if (currentFocus === 'vina') {
-    const tags = (d.distribusi?.hashtags || []).map(t => `<span style="display:inline-block; background:rgba(0,240,255,0.15); color:var(--neon-cyan); padding:2px 7px; border-radius:4px; font-size:10px; margin:2px;">${t}</span>`).join('');
-    body.innerHTML = `
-      <div class="hud-card">
-        <div class="hud-label">Teks Thumbnail Clickbait</div>
-        <div class="hud-text" style="font-size:16px; font-weight:800; color:var(--neon-gold);">${d.distribusi?.teks_thumbnail}</div>
+  } else if (id === 'vina') {
+    const tags = (d.distribusi?.hashtags || []).map(t => `<span style="display:inline-block; background:rgba(189,0,255,0.25); color:#e084fc; border:1px solid rgba(189,0,255,0.4); padding:4px 10px; border-radius:4px; font-size:11px; margin:3px;">${t}</span>`).join('');
+    container.innerHTML = `
+      <div class="chamber-card">
+        <div class="chamber-label">Teks Thumbnail Clickbait</div>
+        <div class="chamber-text" style="font-size:18px; font-weight:800; color:var(--neon-gold);">${d.distribusi?.teks_thumbnail}</div>
       </div>
-      <div class="hud-card">
-        <div class="hud-label">Caption TikTok & Reels</div>
-        <div class="hud-text">${d.distribusi?.caption_postingan}</div>
+      <div class="chamber-card">
+        <div class="chamber-label">Caption TikTok & Reels</div>
+        <div class="chamber-text">${d.distribusi?.caption_postingan}</div>
       </div>
-      <div class="hud-card">
-        <div class="hud-label">Hashtag Viral</div>
-        <div style="margin-top:4px;">${tags}</div>
+      <div class="chamber-card">
+        <div class="chamber-label">Hashtag Viral</div>
+        <div style="margin-top:6px;">${tags}</div>
       </div>
     `;
   }
 }
 
-function copyDossier() {
-  if (!liveStory) return;
+function copyRoomData() {
+  if (!liveData || !currentRoomId) return;
   let txt = "";
-  if (currentFocus === 'karin') txt = liveStory.naskah?.naskah_voiceover_lengkap || "";
-  else if (currentFocus === 'gilang') txt = (liveStory.visual_prompts?.shots || []).map(s => `Shot ${s.shot}: ${s.prompt_en}`).join('\n\n');
-  else if (currentFocus === 'vina') txt = `${liveStory.distribusi?.caption_postingan}\n\n${(liveStory.distribusi?.hashtags || []).join(' ')}`;
-  else txt = `Judul: ${liveStory.ide?.judul}\n\nNaskah: ${liveStory.naskah?.naskah_voiceover_lengkap}`;
+  if (currentRoomId === 'karin') txt = liveData.naskah?.naskah_voiceover_lengkap || "";
+  else if (currentRoomId === 'gilang') txt = (liveData.visual_prompts?.shots || []).map(s => `Shot ${s.shot}: ${s.prompt_en}`).join('\n\n');
+  else if (currentRoomId === 'vina') txt = `${liveData.distribusi?.caption_postingan}\n\n${(liveData.distribusi?.hashtags || []).join(' ')}`;
+  else txt = `Judul: ${liveData.ide?.judul}\n\nNaskah: ${liveData.naskah?.naskah_voiceover_lengkap}`;
 
   navigator.clipboard.writeText(txt).then(() => {
-    const btn = document.getElementById('btn-copy-dossier');
+    const btn = document.getElementById('btn-copy-room');
     const old = btn.textContent;
-    btn.textContent = "✅ TERSALIN KE CLIPBOARD!";
+    btn.textContent = "✅ DATA TERSALIN KE CLIPBOARD!";
     setTimeout(() => btn.textContent = old, 1800);
   });
 }
@@ -642,24 +658,16 @@ function copyDossier() {
 const cacheBust = "?t=" + Date.now();
 fetch("data/naskah_terbaru.json" + cacheBust)
   .then(r => r.json())
-  .then(d => {
-    liveStory = d;
-    updateDossier();
-  })
+  .then(d => { liveData = d; })
   .catch(() => {
     fetch("https://raw.githubusercontent.com/agungsetya290-commits/DramaCEO/main/data/naskah_terbaru.json" + cacheBust)
       .then(r => r.json())
-      .then(d => {
-        liveStory = d;
-        updateDossier();
-      });
+      .then(d => { liveData = d; });
   });
 
-// Start 3D
 window.onload = () => {
-  init3D();
-  animate3D();
-  updateDossier();
+  initCockpit3D();
+  animateCockpit();
 };
 </script>
 </body>
