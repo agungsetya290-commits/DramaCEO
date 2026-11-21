@@ -13,9 +13,13 @@ jobs:
   produksi_drama:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
@@ -23,14 +27,21 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-        run: python agents/drama_office.py
+        run: |
+          mkdir -p data
+          python agents/drama_office.py
 
       - name: Simpan Naskah & Ide ke Repo
         if: always()
         run: |
+          mkdir -p data
           git config user.name "kantor-drama-bot"
           git config user.email "bot@kantor-drama.local"
-          git add data/
-          git diff --staged --quiet || git commit -m "drama $(date +%Y-%m-%d-%H%M)"
-          git pull --rebase || true
-          git push
+          git add data/ index.html || true
+          if git diff --staged --quiet; then
+            echo "Tidak ada perubahan baru untuk di-commit."
+          else
+            git commit -m "drama: update naskah $(date +'%Y-%m-%d %H:%M')"
+            git pull --rebase origin main || true
+            git push origin main
+          fi
