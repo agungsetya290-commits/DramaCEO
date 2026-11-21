@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
-"""Kantor AI Drama - Spesialis Naskah & Alur Video 'Orang Diremehkan Jadi Kaya' / 'Undercover Boss'"""
-import json, os, sys, time, urllib.request, urllib.error
+"""Kantor Cerita Viral Indonesia - Multi-Agent untuk Semua Tema 'Diremehkan Ternyata Sultan':
+1. POV Makan di Warteg / Angkringan tapi Saldo Puluhan Miliar
+2. Tukang Bakso / Pedagang Kaki Lima Ternyata Juragan Tanah & Investor
+3. Beli Cash di Showroom / Toko Emas saat Berpakaian Lusuh Dihina Sales
+4. Reuni Teman Lama / Warkop: Si Sombong Pamer vs Si Santai Pemilik Bisnis
+5. Bos / Pewaris Menyamar Jadi Pelayan, Kuli, atau Kurir
+"""
+import json, os, sys, time, random, urllib.request, urllib.error
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -8,10 +14,43 @@ DATA = os.path.join(ROOT, "data")
 KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 BASE = "https://generativelanguage.googleapis.com/v1beta"
 WIB = timezone(timedelta(hours=7))
-UA = "Mozilla/5.0 (compatible; KantorAIDrama/1.0)"
+UA = "Mozilla/5.0 (compatible; CeritaViralAI/3.0)"
 
-# Prioritas model Gemini
 MODEL_PREF = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash", "flash"]
+
+# Bank Tema Kehidupan Nyata & Populer di Indonesia
+TEMA_LIST = [
+    {
+        "kategori": "POV Warteg / Angkringan",
+        "deskripsi": "Makan sederhana di warteg pinggir jalan memakai kaos oblong dan sandal jepit. Orang di sebelah pamer gaya hidup dan meremehkan, lalu pas bayar kasir kasbon ditutup atau saldo m-banking/Black Card terlihat tanpa sengaja bernilai puluhan miliar.",
+        "hook": "Makan di warteg nasi tempe orek, tapi pas buka m-banking saldonya bikin kasir gemetar.",
+        "lokasi": "Warteg pinggir jalan ramai / Angkringan malam hari"
+    },
+    {
+        "kategori": "Tukang Bakso / Kaki Lima Sultan",
+        "deskripsi": "Tukang gerobak bakso/cilok yang tampil sederhana dan sering dipalak preman atau dicibir pelanggan sombong, ternyata pemilik belasan ruko di jalan utama dan juragan kontrakan.",
+        "hook": "Jangan remehkan bapak tukang bakso kuah ini, ruko tempat kamu nongkrong itu punya dia.",
+        "lokasi": "Gerobak bakso pinggir jalan / Pelataran ruko"
+    },
+    {
+        "kategori": "Beli Cash di Showroom / Toko Mewah",
+        "deskripsi": "Orang tua atau pemuda berkaos lusuh masuk dealer mobil sport atau toko emas perhiasan. Ditolak dan diusir sales sombong, sampai akhirnya mengeluarkan karung/koper berisi uang tunai cash.",
+        "hook": "Sales showroom tertawa sinis saat pria bersandal jepit ini menunjuk mobil termahal.",
+        "lokasi": "Showroom mobil mewah / Toko perhiasan emas"
+    },
+    {
+        "kategori": "Reuni Kawan Lama / Warkop",
+        "deskripsi": "Nongkrong reuni teman sekolah di kafe atau warkop. Satu orang pamer mobil cicilan dan gaji manajer sambil menyindir temannya yang cuma diam, sampai pemilik gedung kafe datang menyapa teman yang diam itu sebagai bos pemilik kafe.",
+        "hook": "Puas pamer kunci mobil di reuni, dia nggak tahu sewa tempat nongkrongnya milik temannya sendiri.",
+        "lokasi": "Kafe modern / Warkop tongkrongan"
+    },
+    {
+        "kategori": "Kurir / Ojol Penyelamat",
+        "deskripsi": "Driver ojol atau kurir paket yang diinjak-injak arogansi pelanggan kaya baru, ternyata mantan konglomerat dermawan atau pemilik saham utama aplikasi tersebut yang lagi turun ke lapangan.",
+        "hook": "Paket dilempar ke tanah karena dianggap kotor, semenit kemudian ada telepon dari kantor pusat.",
+        "lokasi": "Depan rumah mewah / Pagar perumahan elit"
+    }
+]
 
 
 def http(url, data=None, timeout=50):
@@ -88,105 +127,110 @@ def main():
         print("GEMINI_API_KEY belum disetel!", file=sys.stderr)
         sys.exit(1)
 
+    # Pilih tema acak dari bank tema kehidupan nyata Indonesia
+    pilihan_tema = random.choice(TEMA_LIST)
     models = pick_models()
-    print(f"[{jam}] Menjalankan Kantor AI Drama dengan model: {models[0]}")
+    print(f"[{jam}] Memproduksi Cerita: {pilihan_tema['kategori']} (Model: {models[0]})")
 
-    # 1. Agent Rendra: Ide & Premis Drama Emosional
-    rendra_prompt = """Kamu Rendra, creative director ahli meriset plot drama pendek viral (Reels/TikTok/Shorts).
-Buat 1 ide cerita bertema: 'Orang Diremehkan, Ternyata Pemilik Asli / Konglomerat yang Menyamar'.
-Karakteristik wajib:
-- Setting lokasi Indonesia yang realistis (kantor cabang mewah, dealer mobil sport, reuni SMA hotel bintang lima, restoran elit).
-- Antagonis yang sombong, manipulatif, dan menghina status sosial / fisik / pakaian.
-- Protagonis yang berpura-pura sederhana (OB, kurir, supir, anak magang) tetapi memiliki kekuasaan mutlak.
-- Twist kedatangan pihak berwenang / petinggi yang membungkuk hormat padanya.
+    # 1. Agent Rendra: Plot & Karakter Lokal Realistis
+    rendra_prompt = f"""Kamu Rendra, creative researcher ahli merancang drama pendek viral Indonesia.
+Kategori Terpilih: {pilihan_tema['kategori']}
+Deskripsi: {pilihan_tema['deskripsi']}
+Contoh Hook: {pilihan_tema['hook']}
+Lokasi: {pilihan_tema['lokasi']}
+
+Buat 1 alur cerita POV / orang diremehkan yang sangat adiktif dengan bumbu lokal Indonesia (warteg, warkop, sandal jepit, m-banking, preman, dll).
 
 Format JSON:
-{
-  "judul": "Judul bombastis yang memancing emosi",
-  "lokasi": "Lobi kantor / Dealer / Reuni",
-  "protagonis": {"nama": "Rian", "status_samaran": "OB baru", "identitas_asli": "Pewaris Tunggal Mahardika Group"},
-  "antagonis": {"nama": "Danu", "jabatan": "Manajer Cabang Arogan", "tindakan_hina": "Menumpahkan kopi dan menyuruh menjilat sepatu"},
-  "plot_twist": "Direktur Utama pusat datang membungkuk hormat dan membongkar korupsi si antagonis"
-}"""
+{{
+  "kategori": "{pilihan_tema['kategori']}",
+  "judul": "Judul heboh yang memancing rasa penasaran penonton",
+  "karakter": {{
+    "protagonis": "Nama & deskripsi penampilan sederhana",
+    "antagonis": "Nama & deskripsi gaya sombong / arogan"
+  }},
+  "situasi_penghinaan": "Detail adegan saat si protagonis diremehkan di tempat umum",
+  "plot_twist": "Momen mengejutkan saat kekayaan atau identitas asli terungkap",
+  "ending": "Reaksi syok dan penyesalan si antagonis"
+}}"""
     ide, m = ask(models, rendra_prompt)
     print(f"[Rendra] Ide selesai: {ide.get('judul')}")
 
-    # 2. Agent Karin: Penulis Naskah Dialog & Hook (60 Detik)
-    karin_prompt = f"""Kamu Karin, scriptwriter drama pendek viral spesialis retensi penonton tinggi.
-Berdasarkan ide dari Rendra ini:
+    # 2. Agent Karin: Naskah Dialog & Hook 60 Detik
+    karin_prompt = f"""Kamu Karin, scriptwriter spesialis retensi penonton tinggi.
+Ide Cerita dari Rendra:
 {json.dumps(ide, ensure_ascii=False)}
 
-Tulis naskah dialog video 60 detik (vertikal 9:16).
-Wajib ada:
-1. 00:00-00:03 HOOK EKSTREM: Dialog penghinaan yang bikin penonton naik darah.
-2. 00:03-00:20 ESKALASI: Antagonis menindas, protagonis tenang membalas dengan kalimat menusuk.
-3. 00:20-00:35 THE SECRET: Petunjuk kecil bahwa si protagonis orang berkuasa (telepon/berkas).
-4. 00:35-00:50 THE TWIST: Rombongan pimpinan pusat datang, mengabaikan antagonis, tunduk ke protagonis.
-5. 00:50-00:60 CLIFFHANGER: Antagonis panik ketakutan, CTA penonton 'Komen LANJUT PART 2'.
+Tulis naskah video 60 detik vertikal (9:16) dengan ritme cepat:
+- 00:00-00:03 HOOK: Ucapan hinaan pedas atau narasi yang bikin penonton emosi.
+- 00:03-00:20 ESKALASI: Antagonis pamer & menghina, protagonis tetap santai dan tenang.
+- 00:20-00:40 THE REVEAL: Muncul bukti kekayaan (saldo rekening, sertifikat tanah, kedatangan orang penting).
+- 00:40-00:52 KARMA INSTAN: Antagonis langsung pucat dan gemetar.
+- 00:52-00:60 CLIFFHANGER / CTA: 'Komen LANJUT PART 2 untuk lihat kelanjutannya!'
 
 Format JSON:
 {{
   "hook_awal": "Teks hook 3 detik pertama",
-  "naskah_lengkap_voiceover": "Teks utuh yang tinggal di-copy ke Text-to-Speech",
-  "scene": [
-    {{"timecode": "00:00-00:06", "karakter": "Danu", "dialog": "...", "aksi_visual": "..."}},
-    {{"timecode": "00:06-00:15", "karakter": "Danu & Rian", "dialog": "...", "aksi_visual": "..."}},
-    {{"timecode": "00:15-00:25", "karakter": "Rian", "dialog": "...", "aksi_visual": "..."}},
-    {{"timecode": "00:25-00:35", "karakter": "Narator", "dialog": "...", "aksi_visual": "..."}},
-    {{"timecode": "00:35-00:45", "karakter": "Petinggi Pusat", "dialog": "...", "aksi_visual": "..."}},
-    {{"timecode": "00:45-00:60", "karakter": "Narator", "dialog": "...", "aksi_visual": "..."}}
+  "naskah_voiceover_lengkap": "Teks lengkap siap dibaca Text-to-Speech",
+  "timeline": [
+    {{"detik": "00:00-00:06", "dialog_narasi": "...", "visual_aksi": "...", "teks_layar": "..."}},
+    {{"detik": "00:06-00:15", "dialog_narasi": "...", "visual_aksi": "...", "teks_layar": "..."}},
+    {{"detik": "00:15-00:28", "dialog_narasi": "...", "visual_aksi": "...", "teks_layar": "..."}},
+    {{"detik": "00:28-00:42", "dialog_narasi": "...", "visual_aksi": "...", "teks_layar": "..."}},
+    {{"detik": "00:42-00:52", "dialog_narasi": "...", "visual_aksi": "...", "teks_layar": "..."}},
+    {{"detik": "00:52-00:60", "dialog_narasi": "...", "visual_aksi": "...", "teks_layar": "..."}}
   ]
 }}"""
     naskah, m = ask(models, karin_prompt)
-    print("[Karin] Naskah selesai")
+    print("[Karin] Naskah dialog selesai")
 
-    # 3. Agent Gilang: Prompt Visual & Video Motion (Kling / Runway / Midjourney)
-    gilang_prompt = f"""Kamu Gilang, visual director ahli AI image & video prompts (Midjourney, Flux, Kling AI, Runway Gen-3).
-Berdasarkan naskah Karin:
-{json.dumps(naskah.get('scene', []), ensure_ascii=False)}
+    # 3. Agent Gilang: Prompt Visual AI (Kling / Runway / Midjourney) & Sound Design
+    gilang_prompt = f"""Kamu Gilang, visual director untuk video pendek AI.
+Timeline Naskah:
+{json.dumps(naskah.get('timeline', []), ensure_ascii=False)}
 
-Buat 6 prompt video AI dalam BAHASA INGGRIS dengan kualitas sinematik 9:16 vertikal, deskripsi konsistensi karakter, gerakan kamera, dan arahan SFX audio.
+Buat 6 prompt video AI sinematik dalam BAHASA INGGRIS, rasio vertikal 9:16, pencahayaan realistis, gerakan kamera, dan sound effect per adegan.
 
 Format JSON:
 {{
-  "character_dna": "Deskripsi wajah & baju karakter utama agar konsisten di setiap scene",
+  "character_consistency": "Deskripsi fisik protagonis & antagonis agar sama di tiap adegan",
   "shots": [
     {{
       "shot": 1,
       "timecode": "00:00-00:06",
       "prompt_en": "Cinematic vertical 9:16 ...",
-      "camera_movement": "Crash zoom / Slow pan",
-      "sfx": "Glass breaking, dramatic whoosh"
+      "camera_motion": "Slow pan / Zoom in",
+      "sound_fx": "Nama suara SFX"
     }}
   ]
 }}"""
     visual, m = ask(models, gilang_prompt)
-    print("[Gilang] Prompt visual & SFX selesai")
+    print("[Gilang] Prompt visual AI & SFX selesai")
 
-    # 4. Agent Vina: Distribusi, Judul Clickbait & Caption Sosmed
-    vina_prompt = f"""Kamu Vina, social media manager spesialis FYP TikTok & Reels Instagram.
-Berdasarkan drama ini:
+    # 4. Agent Vina: Distribusi, Judul Thumbnail & Caption
+    vina_prompt = f"""Kamu Vina, social media manager spesialis FYP TikTok & Instagram Reels.
 Judul: {ide.get('judul')}
+Kategori: {ide.get('kategori')}
 Hook: {naskah.get('hook_awal')}
 
-Buat 1 paket postingan viral:
-- Judul thumbnail (maksimal 5 kata, huruf kapital, bikin penasaran).
-- Caption TikTok & Instagram Reels (bahasa Indonesia gaul, memancing perdebatan di kolom komentar).
-- 10 Hashtag trending drama.
+Buat 1 paket postingan:
+- Judul thumbnail (maksimal 4 kata, huruf besar, bikin kaget).
+- Caption TikTok & Instagram Reels (bahasa Indonesia gaul, mengundang netizen berkomentar).
+- 10 Hashtag trending drama lokal.
 
 Format JSON:
 {{
   "teks_thumbnail": "...",
-  "caption_reels_tiktok": "...",
-  "hashtags": ["#dramakantor", "..."]
+  "caption_postingan": "...",
+  "hashtags": ["#ceritahidup", "#sultanmenyamar", "#drama"]
 }}"""
     distribusi, m = ask(models, vina_prompt)
     print("[Vina] Caption & distribusi selesai")
 
-    # Simpan hasil lengkap
-    hasil_akhir = {
+    hasil = {
         "tanggal": tanggal,
         "jam": jam,
+        "kategori": pilihan_tema["kategori"],
         "ide": ide,
         "naskah": naskah,
         "visual_prompts": visual,
@@ -194,15 +238,15 @@ Format JSON:
     }
 
     os.makedirs(DATA, exist_ok=True)
-    out_file = os.path.join(DATA, f"drama_{tanggal}.json")
+    slug = pilihan_tema["kategori"].lower().replace(" ", "_").replace("/", "_")
+    out_file = os.path.join(DATA, f"konten_{slug}_{tanggal}.json")
     with open(out_file, "w", encoding="utf-8") as f:
-        json.dump(hasil_akhir, f, ensure_ascii=False, indent=2)
+        json.dump(hasil, f, ensure_ascii=False, indent=2)
 
-    # Simpan juga ke naskah_terbaru.json agar mudah diakses
     with open(os.path.join(DATA, "naskah_terbaru.json"), "w", encoding="utf-8") as f:
-        json.dump(hasil_akhir, f, ensure_ascii=False, indent=2)
+        json.dump(hasil, f, ensure_ascii=False, indent=2)
 
-    print(f"Sukses! Seluruh naskah, prompt visual, dan caption tersimpan di {out_file}")
+    print(f"Berhasil! Konten tema '{pilihan_tema['kategori']}' tersimpan di {out_file}")
 
 
 if __name__ == "__main__":
