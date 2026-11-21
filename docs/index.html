@@ -3,140 +3,664 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kantor Drama CEO</title>
+<title>Drama CEO • 3D Space Orbital Station</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Three.js 3D Engine -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
-:root{
-  --bg:#12101e; --floor:#241d33; --ink:#f4f1ff; --dim:#9b93b5;
-  --gold:#ffcf5c; --ok:#5ddb9a; --warn:#ff7d7d; --line:#4a3a74;
-  --font:"Courier New",ui-monospace,monospace;
+:root {
+  --neon-cyan: #00f0ff;
+  --neon-gold: #ffd700;
+  --neon-purple: #bd00ff;
+  --neon-green: #00ff66;
+  --space-dark: #05060c;
+  --panel-bg: rgba(10, 14, 26, 0.85);
+  --panel-border: rgba(0, 240, 255, 0.25);
+  --text: #f0f4ff;
+  --text-dim: #8fa0c0;
 }
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);image-rendering:pixelated}
-.byline{position:fixed;top:6px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;z-index:50}
-.wrap{max-width:860px;margin:0 auto;padding:26px 12px 40px}
-h1{font-size:20px;letter-spacing:4px;margin:4px 0 6px;text-transform:uppercase;color:var(--gold)}
-.sub{font-size:11px;color:var(--dim);line-height:1.7;margin-bottom:14px}
-.chip{display:inline-block;border:1px solid var(--line);padding:2px 7px;margin:2px 4px 2px 0;font-size:10px;border-radius:2px;color:var(--dim)}
-.chip.ok{color:var(--ok);border-color:#2d5c45}
-.floor{position:relative;border:3px solid var(--line);background:#1a142e url("scene.svg") center/100% 100% no-repeat;aspect-ratio:4/3;overflow:hidden;border-radius:4px}
-.room{position:absolute;inset:0}
-.desk{position:absolute;width:22%;transform:translate(-50%,-50%);cursor:pointer;background:none;border:0;padding:0;color:inherit;font-family:inherit;text-align:center}
-.deskTop{position:relative;height:18px;background:#6b4e8f;border:2px solid #241a33;border-bottom-width:5px;border-radius:2px;box-shadow:0 4px 0 #1a1226}
-.deskTop::before{content:"";position:absolute;left:50%;top:-13px;transform:translateX(-50%);width:22px;height:13px;background:#1d2b30;border:2px solid #241a33;border-radius:1px}
-.desk.ceo .deskTop{background:#a87d2a;border-color:#3a2807}
-.desk.ceo .deskTop::before{background:#5c4214}
-.deskName{font-size:10px;margin-top:5px;font-weight:bold;letter-spacing:1px}
-.deskRole{font-size:8px;color:var(--dim)}
-.guy{position:absolute;width:44px;height:62px;transform:translate(-50%,-100%);transition:left 1.4s steps(9,end),top 1.4s steps(9,end);z-index:3}
-.guy i{position:absolute;display:block}
-.shadow{left:4px;top:56px;width:36px;height:7px;background:#0006;border-radius:50%}
-.head{left:9px;top:6px;width:26px;height:23px;background:#f0c39b;border:2px solid #241a33;border-radius:2px}
-.hair{left:9px;top:6px;width:26px;height:9px;background:#2b1d33;border:2px solid #241a33;border-bottom:0;border-radius:2px 2px 0 0}
-.eyes{left:15px;top:19px;width:16px;height:4px;background:linear-gradient(90deg,#241a33 5px,transparent 5px 11px,#241a33 11px)}
-.body{left:7px;top:31px;width:30px;height:19px;border:2px solid #241a33;border-radius:2px}
-.arm{left:2px;top:34px;width:40px;height:6px;background:#241a33;opacity:.6;border-radius:2px}
-.legs{left:12px;top:49px;width:20px;height:10px;background:#443b59;border:2px solid #241a33;border-top:0}
-.crown{left:13px;top:0;width:18px;height:6px;background:var(--gold);border:1px solid #241a33}
-.guy.work .arm{animation:tap .45s steps(2,end) infinite alternate}
-@keyframes tap{to{transform:translateY(-3px)}}
-.tag{position:absolute;left:50%;top:-16px;transform:translateX(-50%);font-size:9px;white-space:nowrap;background:#000c;padding:1px 6px;border:1px solid var(--line);border-radius:2px}
-.panel{border:1px solid var(--line);background:#181329;padding:14px;border-radius:4px;margin-top:14px;min-height:100px}
-.panel h2{font-size:13px;margin:0 0 6px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
-.panel .who{font-size:10px;color:var(--dim);margin-bottom:12px}
-.kv{border-left:2px solid var(--gold);padding:3px 0 3px 10px;margin:9px 0}
-.k{font-size:9px;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
-.v{font-size:12px;line-height:1.65;white-space:pre-wrap;word-break:break-word}
-.card{border:1px dashed var(--line);padding:10px;margin:10px 0;background:#140f24;border-radius:3px}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--space-dark);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* 3D WebGL Canvas */
+#webgl-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  outline: none;
+}
+
+/* Sci-Fi HUD Overlay */
+.hud-overlay {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hud-header {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(5, 6, 12, 0.9) 0%, transparent 100%);
+  pointer-events: auto;
+}
+.hud-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #fff, var(--neon-cyan), var(--neon-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hud-badge {
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  background: rgba(0, 240, 255, 0.12);
+  border: 1px solid var(--neon-cyan);
+  border-radius: 4px;
+  color: var(--neon-cyan);
+  font-family: 'Orbitron', monospace;
+}
+
+/* 3D Drag Tip */
+.control-tip {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  color: var(--neon-cyan);
+  background: rgba(5, 8, 18, 0.85);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 8px 18px;
+  border-radius: 99px;
+  letter-spacing: 1.5px;
+  backdrop-filter: blur(8px);
+  z-index: 20;
+  pointer-events: auto;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+/* Quick Agent Selector Bar */
+.crew-bar {
+  position: fixed;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+  pointer-events: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 95vw;
+}
+.crew-btn {
+  background: rgba(10, 16, 32, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s;
+}
+.crew-btn:hover, .crew-btn.active {
+  background: rgba(0, 240, 255, 0.25);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Hologram Dossier Window */
+.dossier-window {
+  position: fixed;
+  bottom: 60px;
+  right: 24px;
+  width: 440px;
+  max-width: calc(100vw - 48px);
+  max-height: 70vh;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  backdrop-filter: blur(16px);
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 25;
+  pointer-events: auto;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.15);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dossier-window::-webkit-scrollbar { width: 5px; }
+.dossier-window::-webkit-scrollbar-thumb { background: var(--panel-border); border-radius: 10px; }
+
+.dossier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 14px;
+}
+.dossier-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--neon-cyan);
+}
+.dossier-status {
+  font-size: 10px;
+  font-family: 'Orbitron', monospace;
+  color: var(--neon-green);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hud-card {
+  background: rgba(18, 25, 46, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.hud-label {
+  font-family: 'Orbitron', monospace;
+  font-size: 9.5px;
+  color: var(--neon-gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.hud-text {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.btn-action {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.2), rgba(189, 0, 255, 0.2));
+  border: 1px solid var(--neon-cyan);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s;
+}
+.btn-action:hover {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
 </style>
 </head>
 <body>
-<div class="byline">Drama CEO Studio</div>
-<div class="wrap">
-  <h1>Kantor Drama CEO</h1>
-  <div class="sub" id="meta">Memuat status agen drama…</div>
 
-  <div class="floor" id="floor">
-    <div class="room" id="room"></div>
+<!-- Three.js 3D WebGL Canvas -->
+<canvas id="webgl-canvas"></canvas>
+
+<!-- HUD Overlay UI -->
+<div class="hud-overlay">
+  <header class="hud-header">
+    <div class="hud-title">
+      <span>🌌</span> ORBITAL SPACE STATION • DRAMA CEO
+    </div>
+    <div class="hud-badge" id="hud-status">STATUS: ONLINE 3D</div>
+  </header>
+
+  <!-- Crew Navigation Bar -->
+  <div class="crew-bar">
+    <button class="crew-btn active" onclick="focusAgent('ceo', this)">👑 CEO AGUNG</button>
+    <button class="crew-btn" onclick="focusAgent('rendra', this)">💡 RENDRA</button>
+    <button class="crew-btn" onclick="focusAgent('karin', this)">✍️ KARIN</button>
+    <button class="crew-btn" onclick="focusAgent('gilang', this)">🎬 GILANG</button>
+    <button class="crew-btn" onclick="focusAgent('vina', this)">🚀 VINA</button>
   </div>
 
-  <div class="panel" id="panel">
-    <h2>Meja Kerja Agen</h2>
-    <div class="who">Klik meja salah satu agen di atas untuk melihat ide, naskah 60 detik, prompt visual AI, atau caption.</div>
+  <!-- Interactive 3D Orbit Tip -->
+  <div class="control-tip">
+    🖱️ DRAG / SWIPE UNTUK MEMUTAR 3D SPACE STATION • KLIK POD KRU UNTUK LIHAT NASKAH
   </div>
+
+  <!-- Holographic Dossier Panel -->
+  <aside class="dossier-window" id="dossier">
+    <div class="dossier-header">
+      <div>
+        <div class="dossier-name" id="dossier-title">CEO AGUNG</div>
+        <div style="font-size:11px; color:var(--text-dim);" id="dossier-role">Director & Orbital Commander</div>
+      </div>
+      <div class="dossier-status" id="dossier-state">
+        <span style="display:inline-block; width:6px; height:6px; background:var(--neon-green); border-radius:50%; box-shadow:0 0 8px var(--neon-green);"></span>
+        RESTING IN ZERO-G
+      </div>
+    </div>
+    <div id="dossier-content">
+      <!-- Injected from data -->
+    </div>
+    <button class="btn-action" id="btn-copy-dossier" onclick="copyDossier()">📋 SALIN DATA AGEN INI</button>
+  </aside>
 </div>
 
 <script>
-const DESKS = {
-  ceo: {x:50, y:45, nama:"CEO Agung", peran:"Pemilik & Pengarah Studio", warna:"#2b2b3a"},
-  rendra: {x:22, y:65, nama:"Rendra", peran:"Konseptor Cerita & Plot", warna:"#ff9ecb"},
-  karin: {x:40, y:78, nama:"Karin", peran:"Penulis Naskah & Hook 60s", warna:"#5ddb9a"},
-  gilang: {x:60, y:78, nama:"Gilang", peran:"Visual & Video Prompts AI", warna:"#79b8ff"},
-  vina: {x:78, y:65, nama:"Vina", peran:"Distribusi, Judul & Caption", warna:"#ffcf5c"}
+// ==================== 1. THREE.JS 3D UNIVERSE ====================
+let scene, camera, renderer;
+let planet, planetClouds, stationRing, starField;
+let pods = {};
+let currentFocus = 'ceo';
+let isDragging = false, prevMousePos = { x: 0, y: 0 };
+let targetRotY = 0, targetRotX = 0.3;
+
+const AGENT_DATA_3D = {
+  ceo: { name: "CEO AGUNG", role: "Orbital Studio Commander", color: 0xffd700, angle: 0 },
+  rendra: { name: "RENDRA", role: "Space Story Researcher", color: 0xff4081, angle: (Math.PI * 2 / 5) * 1 },
+  karin: { name: "KARIN", role: "Screenwriter & Holo-Prompter", color: 0x00f0ff, angle: (Math.PI * 2 / 5) * 2 },
+  gilang: { name: "GILANG", role: "Visual & VFX Director", color: 0x00ff66, angle: (Math.PI * 2 / 5) * 3 },
+  vina: { name: "VINA", role: "Galactic Social Viralizer", color: 0xbd00ff, angle: (Math.PI * 2 / 5) * 4 }
 };
-const DOOR = {x:50, y:99};
-let dataDrama = null;
 
-const esc = s => String(s).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function init3D() {
+  const canvas = document.getElementById('webgl-canvas');
+  scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x05060c, 0.002);
 
-function render(v){
-  if(!v) return "";
-  if(Array.isArray(v)) return v.map(x=>`<div class="card">${render(x)}</div>`).join("");
-  if(typeof v === "object") return Object.entries(v).map(([k,x])=>
-    `<div class="kv"><div class="k">${esc(k.replace(/_/g," "))}</div><div class="v">${typeof x==="object"?render(x):esc(x)}</div></div>`).join("");
-  return esc(v);
+  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+  camera.position.set(0, 18, 42);
+
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // Lighting
+  const ambientLight = new THREE.AmbientLight(0x223355, 1.2);
+  scene.add(ambientLight);
+
+  const sunLight = new THREE.DirectionalLight(0xffeedd, 2.5);
+  sunLight.position.set(100, 80, 50);
+  scene.add(sunLight);
+
+  const rimLight = new THREE.PointLight(0x00f0ff, 3, 100);
+  rimLight.position.set(0, 5, 0);
+  scene.add(rimLight);
+
+  // 1. Starfield Particles (Deep Space)
+  const starGeo = new THREE.BufferGeometry();
+  const starCount = 3500;
+  const starPos = new Float32Array(starCount * 3);
+  for (let i = 0; i < starCount * 3; i++) {
+    starPos[i] = (Math.random() - 0.5) * 1200;
+  }
+  starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+  const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 1.2, transparent: true, opacity: 0.85 });
+  starField = new THREE.Points(starGeo, starMat);
+  scene.add(starField);
+
+  // 2. Giant Exoplanet in Background
+  const planetGeo = new THREE.SphereGeometry(32, 64, 64);
+  const planetMat = new THREE.MeshStandardMaterial({
+    color: 0x1a365d,
+    roughness: 0.7,
+    metalness: 0.1,
+    emissive: 0x051329,
+    emissiveIntensity: 0.4
+  });
+  planet = new THREE.Mesh(planetGeo, planetMat);
+  planet.position.set(-60, -30, -120);
+  scene.add(planet);
+
+  // Planet Atmosphere Glow Ring
+  const ringGeo = new THREE.RingGeometry(38, 55, 64);
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff, side: THREE.DoubleSide, transparent: true, opacity: 0.25 });
+  const pRing = new THREE.Mesh(ringGeo, ringMat);
+  pRing.rotation.x = Math.PI / 2.3;
+  planet.add(pRing);
+
+  // 3. Space Station Command Deck (Sci-Fi Hologram Platform)
+  const platformGeo = new THREE.CylinderGeometry(24, 26, 1.5, 32);
+  const platformMat = new THREE.MeshStandardMaterial({
+    color: 0x0d1424,
+    metalness: 0.85,
+    roughness: 0.25
+  });
+  const platform = new THREE.Mesh(platformGeo, platformMat);
+  platform.position.y = -1;
+  scene.add(platform);
+
+  // Glowing Outer Energy Ring
+  const energyRingGeo = new THREE.TorusGeometry(24.5, 0.2, 16, 100);
+  const energyRingMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff });
+  stationRing = new THREE.Mesh(energyRingGeo, energyRingMat);
+  stationRing.rotation.x = Math.PI / 2;
+  scene.add(stationRing);
+
+  // Central Hologram Core
+  const coreGeo = new THREE.OctahedronGeometry(2.5, 0);
+  const coreMat = new THREE.MeshBasicMaterial({ color: 0xffd700, wireframe: true });
+  const holoCore = new THREE.Mesh(coreGeo, coreMat);
+  holoCore.position.set(0, 4, 0);
+  scene.add(holoCore);
+
+  // 4. Build 3D Astronaut / Crew Pods for 5 Agents
+  Object.entries(AGENT_DATA_3D).forEach(([id, info]) => {
+    const podGroup = new THREE.Group();
+    const radius = id === 'ceo' ? 0 : 16;
+    const x = Math.sin(info.angle) * radius;
+    const z = Math.cos(info.angle) * radius;
+    podGroup.position.set(x, 0, z);
+
+    // Pod Pedestal
+    const pedGeo = new THREE.CylinderGeometry(2.2, 2.8, 1.2, 16);
+    const pedMat = new THREE.MeshStandardMaterial({ color: 0x11192e, metalness: 0.9, roughness: 0.2 });
+    const ped = new THREE.Mesh(pedGeo, pedMat);
+    podGroup.add(ped);
+
+    // Holographic Base Ring
+    const haloGeo = new THREE.RingGeometry(2.4, 2.7, 32);
+    const haloMat = new THREE.MeshBasicMaterial({ color: info.color, side: THREE.DoubleSide });
+    const halo = new THREE.Mesh(haloGeo, haloMat);
+    halo.rotation.x = Math.PI / 2;
+    halo.position.y = 0.65;
+    podGroup.add(halo);
+
+    // Stylized 3D Astronaut Avatar in Zero-G (Body + Visor)
+    const astro = new THREE.Group();
+    astro.position.y = 3.5;
+
+    // Helmet & Visor
+    const headGeo = new THREE.SphereGeometry(1, 16, 16);
+    const headMat = new THREE.MeshStandardMaterial({ color: 0xdde6ed, roughness: 0.3 });
+    const head = new THREE.Mesh(headGeo, headMat);
+    astro.add(head);
+
+    const visorGeo = new THREE.SphereGeometry(0.85, 16, 16, 0, Math.PI * 2, 0, Math.PI / 2);
+    const visorMat = new THREE.MeshBasicMaterial({ color: info.color });
+    const visor = new THREE.Mesh(visorGeo, visorMat);
+    visor.rotation.x = Math.PI / 2;
+    visor.position.set(0, 0, 0.3);
+    astro.add(visor);
+
+    // Torso / Spacesuit
+    const bodyGeo = new THREE.CylinderGeometry(0.9, 1.1, 1.8, 16);
+    const bodyMat = new THREE.MeshStandardMaterial({ color: 0x2b384e, roughness: 0.5 });
+    const body = new THREE.Mesh(bodyGeo, bodyMat);
+    body.position.y = -1.4;
+    astro.add(body);
+
+    // Floating Holo-Tablet (Showing Resting State)
+    const tabGeo = new THREE.BoxGeometry(1.2, 0.8, 0.05);
+    const tabMat = new THREE.MeshBasicMaterial({ color: info.color, wireframe: true });
+    const tab = new THREE.Mesh(tabGeo, tabMat);
+    tab.position.set(0, -1.2, 1.1);
+    astro.add(tab);
+
+    podGroup.add(astro);
+    scene.add(podGroup);
+
+    pods[id] = { group: podGroup, astro, halo, info };
+  });
+
+  // Event Listeners for 3D Camera Controls
+  canvas.addEventListener('mousedown', onPointerDown);
+  window.addEventListener('mousemove', onPointerMove);
+  window.addEventListener('mouseup', onPointerUp);
+
+  canvas.addEventListener('touchstart', onTouchStart, { passive: false });
+  window.addEventListener('touchmove', onTouchMove, { passive: false });
+  window.addEventListener('touchend', onPointerUp);
+
+  window.addEventListener('resize', onWindowResize);
 }
 
-function show(id){
-  const p = document.getElementById("panel");
-  const a = DESKS[id];
-  if(!dataDrama){
-    p.innerHTML = `<h2>${esc(a.nama)} (${esc(a.peran)})</h2><div class="who">Belum ada naskah yang digenerate. Jalankan workflow di GitHub Actions untuk memproduksi cerita pertama.</div>`;
+function onPointerDown(e) { isDragging = true; prevMousePos = { x: e.clientX, y: e.clientY }; }
+function onTouchStart(e) { if(e.touches.length === 1) { isDragging = true; prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY }; } }
+
+function onPointerMove(e) {
+  if (!isDragging) return;
+  const deltaX = e.clientX - prevMousePos.x;
+  const deltaY = e.clientY - prevMousePos.y;
+  targetRotY += deltaX * 0.005;
+  targetRotX = Math.max(0.1, Math.min(1.1, targetRotX + deltaY * 0.005));
+  prevMousePos = { x: e.clientX, y: e.clientY };
+}
+
+function onTouchMove(e) {
+  if (!isDragging || e.touches.length !== 1) return;
+  const deltaX = e.touches[0].clientX - prevMousePos.x;
+  const deltaY = e.touches[0].clientY - prevMousePos.y;
+  targetRotY += deltaX * 0.005;
+  targetRotX = Math.max(0.1, Math.min(1.1, targetRotX + deltaY * 0.005));
+  prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  e.preventDefault();
+}
+
+function onPointerUp() { isDragging = false; }
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+// 3D Render Loop
+let clock = new THREE.Clock();
+function animate3D() {
+  requestAnimationFrame(animate3D);
+  const time = clock.getElapsedTime();
+
+  // Rotate galaxy & planet
+  if (planet) planet.rotation.y = time * 0.04;
+  if (stationRing) stationRing.rotation.z = time * 0.1;
+  if (starField) starField.rotation.y = time * 0.005;
+
+  // Zero-G Astronaut Floating & Relaxation Animation
+  Object.values(pods).forEach((p, idx) => {
+    p.astro.position.y = 3.5 + Math.sin(time * 1.5 + idx) * 0.35;
+    p.astro.rotation.y = Math.sin(time * 0.8 + idx) * 0.2;
+    p.astro.rotation.z = Math.cos(time * 1.2 + idx) * 0.06;
+    p.halo.rotation.z = time * 0.5;
+  });
+
+  // Smooth Camera Orbit
+  camera.position.x = Math.sin(targetRotY) * Math.cos(targetRotX) * 44;
+  camera.position.z = Math.cos(targetRotY) * Math.cos(targetRotX) * 44;
+  camera.position.y = Math.sin(targetRotX) * 44;
+  camera.lookAt(0, 3, 0);
+
+  renderer.render(scene, camera);
+}
+
+// ==================== 2. HUD & DATA SYNC ====================
+let liveStory = null;
+
+function focusAgent(id, btn) {
+  document.querySelectorAll('.crew-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  currentFocus = id;
+
+  // Rotate 3D view towards this crew pod
+  const pod = pods[id];
+  if (pod) {
+    targetRotY = -pod.info.angle;
+    targetRotX = 0.35;
+  }
+  updateDossier();
+}
+
+function updateDossier() {
+  const title = document.getElementById('dossier-title');
+  const role = document.getElementById('dossier-role');
+  const body = document.getElementById('dossier-content');
+  const p = AGENT_DATA_3D[currentFocus];
+
+  title.textContent = p.name;
+  role.textContent = p.role;
+
+  if (!liveStory) {
+    body.innerHTML = '<div class="hud-card"><div class="hud-text">Mengambil data naskah luar angkasa dari sistem...</div></div>';
     return;
   }
-  let konten = "";
-  if(id === "ceo") konten = `<div class="card"><div class="k">Kategori Terpilih</div><div class="v">${esc(dataDrama.kategori||"Universal Drama")}</div></div><div class="card"><div class="k">Status Studio</div><div class="v">Semua 4 agen bekerja otomatis menghasilkan naskah dan prompt visual.</div></div>`;
-  else if(id === "rendra") konten = render(dataDrama.ide);
-  else if(id === "karin") konten = render(dataDrama.naskah);
-  else if(id === "gilang") konten = render(dataDrama.visual_prompts);
-  else if(id === "vina") konten = render(dataDrama.distribusi);
 
-  p.innerHTML = `<h2>${esc(a.nama)}</h2><div class="who">${esc(a.peran)}</div>${konten}`;
-  p.scrollIntoView({behavior:"smooth", block:"nearest"});
+  const d = liveStory;
+
+  if (currentFocus === 'ceo') {
+    body.innerHTML = `
+      <div class="hud-card">
+        <div class="hud-label">Misi & Kategori</div>
+        <div class="hud-text" style="color:var(--neon-gold); font-weight:700;">${d.kategori || 'Sultan Menyamar'}</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Judul Utama</div>
+        <div class="hud-text" style="font-weight:700;">${d.ide?.judul || '-'}</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Status Kru Orbit</div>
+        <div class="hud-text">Semua 4 kru telah menyelesaikan misi produksi dan sedang bersantai di Zero-G Chamber.</div>
+      </div>
+    `;
+  } else if (currentFocus === 'rendra') {
+    body.innerHTML = `
+      <div class="hud-card">
+        <div class="hud-label">Premis & Plot</div>
+        <div class="hud-text" style="color:var(--neon-cyan); font-weight:700;">${d.ide?.judul}</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Karakter Utama</div>
+        <div class="hud-text">
+          <b>Protagonis:</b> ${d.ide?.karakter?.protagonis}<br>
+          <b>Antagonis:</b> ${d.ide?.karakter?.antagonis}
+        </div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Plot Twist & Karma</div>
+        <div class="hud-text">${d.ide?.plot_twist}</div>
+      </div>
+    `;
+  } else if (currentFocus === 'karin') {
+    const lines = (d.naskah?.timeline || []).map(t => `
+      <div style="border-left:2px solid var(--neon-cyan); padding-left:8px; margin-bottom:8px;">
+        <div style="font-size:10px; color:var(--neon-cyan); font-family:monospace;">${t.detik} • ${t.teks_layar}</div>
+        <div class="hud-text">${t.dialog_narasi}</div>
+      </div>
+    `).join('');
+    body.innerHTML = `
+      <div class="hud-card" style="border-color:var(--neon-cyan);">
+        <div class="hud-label" style="color:var(--neon-cyan);">Hook 3 Detik Pertama</div>
+        <div class="hud-text" style="font-weight:700;">"${d.naskah?.hook_awal}"</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Voiceover Lengkap (Text-to-Speech)</div>
+        <div class="hud-text" style="background:rgba(0,0,0,0.4); padding:8px; border-radius:4px;">${d.naskah?.naskah_voiceover_lengkap}</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Rincian Scene Per Detik</div>
+        ${lines}
+      </div>
+    `;
+  } else if (currentFocus === 'gilang') {
+    const shots = (d.visual_prompts?.shots || []).map(s => `
+      <div style="border-left:2px solid var(--neon-green); padding-left:8px; margin-bottom:10px;">
+        <div style="font-size:10px; color:var(--neon-green); font-family:monospace;">Shot ${s.shot} (${s.timecode}) • SFX: ${s.sound_fx}</div>
+        <div class="hud-text" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.4); padding:6px; border-radius:4px; margin-top:3px;">${s.prompt_en}</div>
+      </div>
+    `).join('');
+    body.innerHTML = `
+      <div class="hud-card">
+        <div class="hud-label">Konsistensi Karakter</div>
+        <div class="hud-text">${d.visual_prompts?.character_consistency}</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Prompt Video AI Sinematik (Kling / Runway)</div>
+        ${shots}
+      </div>
+    `;
+  } else if (currentFocus === 'vina') {
+    const tags = (d.distribusi?.hashtags || []).map(t => `<span style="display:inline-block; background:rgba(0,240,255,0.15); color:var(--neon-cyan); padding:2px 7px; border-radius:4px; font-size:10px; margin:2px;">${t}</span>`).join('');
+    body.innerHTML = `
+      <div class="hud-card">
+        <div class="hud-label">Teks Thumbnail Clickbait</div>
+        <div class="hud-text" style="font-size:16px; font-weight:800; color:var(--neon-gold);">${d.distribusi?.teks_thumbnail}</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Caption TikTok & Reels</div>
+        <div class="hud-text">${d.distribusi?.caption_postingan}</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Hashtag Viral</div>
+        <div style="margin-top:4px;">${tags}</div>
+      </div>
+    `;
+  }
 }
 
-function buildRoom(){
-  const room = document.getElementById("room");
-  room.innerHTML = "";
-  Object.entries(DESKS).forEach(([id, a])=>{
-    const d = document.createElement("button");
-    d.className = "desk" + (id === "ceo" ? " ceo" : "");
-    d.style.left = a.x + "%";
-    d.style.top = (a.y + 7) + "%";
-    d.innerHTML = `<div class="deskTop"></div><div class="deskName">${esc(a.nama)}</div><div class="deskRole">${esc(a.peran)}</div>`;
-    d.onclick = () => show(id);
-    room.appendChild(d);
+function copyDossier() {
+  if (!liveStory) return;
+  let txt = "";
+  if (currentFocus === 'karin') txt = liveStory.naskah?.naskah_voiceover_lengkap || "";
+  else if (currentFocus === 'gilang') txt = (liveStory.visual_prompts?.shots || []).map(s => `Shot ${s.shot}: ${s.prompt_en}`).join('\n\n');
+  else if (currentFocus === 'vina') txt = `${liveStory.distribusi?.caption_postingan}\n\n${(liveStory.distribusi?.hashtags || []).join(' ')}`;
+  else txt = `Judul: ${liveStory.ide?.judul}\n\nNaskah: ${liveStory.naskah?.naskah_voiceover_lengkap}`;
 
-    const g = document.createElement("div");
-    g.className = "guy";
-    g.style.left = a.x + "%";
-    g.style.top = a.y + "%";
-    g.innerHTML = `<span class="tag">${esc(a.nama)}</span><i class="shadow"></i><i class="head"></i><i class="hair"></i><i class="eyes"></i><i class="body" style="background:${a.warna}"></i><i class="arm"></i><i class="legs"></i>${id==="ceo"?'<i class="crown"></i>':''}`;
-    room.appendChild(g);
-    setTimeout(()=>g.classList.add("work"), 800);
+  navigator.clipboard.writeText(txt).then(() => {
+    const btn = document.getElementById('btn-copy-dossier');
+    const old = btn.textContent;
+    btn.textContent = "✅ TERSALIN KE CLIPBOARD!";
+    setTimeout(() => btn.textContent = old, 1800);
   });
 }
 
-buildRoom();
-
-fetch("data/naskah_terbaru.json?t=" + Date.now())
+// Fetch Latest Data
+const cacheBust = "?t=" + Date.now();
+fetch("data/naskah_terbaru.json" + cacheBust)
   .then(r => r.json())
   .then(d => {
-    dataDrama = d;
-    document.getElementById("meta").innerHTML = `<span class="chip ok">Aktif: ${esc(d.tanggal||"Hari ini")}</span> <span class="chip">${esc(d.kategori||"Drama")}</span>`;
+    liveStory = d;
+    updateDossier();
   })
   .catch(() => {
-    document.getElementById("meta").innerHTML = `<span class="chip">Menunggu produksi naskah pertama...</span>`;
+    fetch("https://raw.githubusercontent.com/agungsetya290-commits/DramaCEO/main/data/naskah_terbaru.json" + cacheBust)
+      .then(r => r.json())
+      .then(d => {
+        liveStory = d;
+        updateDossier();
+      });
   });
+
+// Start 3D
+window.onload = () => {
+  init3D();
+  animate3D();
+  updateDossier();
+};
 </script>
 </body>
 </html>
