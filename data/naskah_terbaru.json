@@ -1,118 +1,115 @@
 {
-  "tanggal": "2026-11-22",
-  "jam": "14:38 WIB",
-  "mode": "Jaring Pengaman (Editorial Viral Template)",
+  "tanggal": "2026-11-23",
+  "jam": "00:38 WIB",
+  "mode": "AI Live Generation (Gemini)",
   "kategori": "Tukang Bakso Kaki Lima Sultan",
   "ide": {
-    "kategori": "Tukang Bakso Kaki Lima Sultan",
-    "judul": "DIPALAK PREMAN DI PINGGIR JALAN, TERNYATA PEMILIK 12 RUKO!",
+    "judul": "Bakso Urat Berlian",
     "karakter": {
-      "protagonis": "Pak Joko (52 tahun, kaos oblong abu-abu, handuk kecil di leher, penjual bakso gerobak)",
-      "antagonis": "Bang Tigor (35 tahun, jaket kulit robek, tato di lengan, preman pasar yang suka memeras pedagang)"
+      "protagonis": "Mang Budi (Tukang bakso keliling sederhana yang aslinya pemilik mall dan tanah di seluruh kota)",
+      "antagonis": "Doni (Pelanggan sombong, pamer mobil mewah, dan mantan pacar anak Mang Budi)"
     },
-    "situasi_penghinaan": "Tigor menendang kursi plastik bakso, meminta jatah uang keamanan 500 ribu dan menghina Pak Joko cuma pedagang miskin yang mengotori jalan.",
-    "plot_twist": "Pak Joko menelepon seseorang. Lima menit kemudian, mobil dinas Satpol PP dan Kepala Pengelola Kawasan datang, mencium tangan Pak Joko dan menyerahkan surat sertifikat kepemilikan 12 ruko tempat Tigor tinggal.",
-    "ending": "Tigor langsung bersujud mencium kaki Pak Joko memohon agar kontrakan keluarganya tidak digusur."
+    "situasi_penghinaan": "Doni memesan semangkuk bakso, lalu menghina Mang Budi miskin, jorok, dan mengusirnya dari depan gedung perkantoran elit karena dianggap merusak pemandangan.",
+    "plot_twist": "Saat Doni hendak mengusir paksa, datang deretan mobil mewah (Supercar) beriringan. Para CEO dan direktur bank turun, mencium tangan Mang Budi, dan melaporkan bahwa gedung tempat Doni bekerja adalah milik Mang Budi.",
+    "ending": "Doni dipecat seketika oleh pemilik gedung (atasan bosnya) yang merupakan rekan bisnis Mang Budi, sementara Mang Budi menutup gerobaknya lebih awal untuk pulang naik helikopter pribadi."
   },
   "naskah": {
-    "hook_awal": "Jangan remehkan bapak tukang bakso gerobak ini, ruko tempat kamu tinggal itu milik dia!",
-    "naskah_voiceover_lengkap": "Orang tua bau kuah bakso kayak lu nggak pantes jualan di sini! Mana uang 500 ribu?! Kalau nggak bayar, gerobak lu gue hancurin sekarang! Bang Tigor menendang kursi bakso sampai patah. Pak Joko cuma mengusap keringatnya dengan tenang. Mas Tigor, kontrakan nomor 7 di gang mawar itu tempat tinggal ibumu kan? Tahu dari mana lu orang tua bangsat?! Tiba-tiba iring-iringan mobil dinas berhenti. Kepala Pengelola Kawasan turun tergesa-gesa dan membungkuk hormat. Selamat sore Pak Haji Joko, ini berkas kepemilikan 12 ruko dan kontrakan yang Bapak beli secara tunai kemarin. Tigor terdiam kaku. Lututnya gemetar lemas ke aspal. Komen LANJUT PART 2!",
+    "hook_awal": "Jualan bakso keliling dikira miskin dan diusir, gak tau aja dia pemilik gedung elit ini!",
+    "naskah_voiceover_lengkap": "Mang Budi, tukang bakso keliling yang sering diremehkan. Hari ini, ia mangkal di depan gedung perkantoran mewah. Doni, pelanggan sombong yang juga mantan pacar anak Mang Budi, datang memesan bakso lalu menghinanya habis-habisan. Doni mengusir Mang Budi karena dianggap merusak pemandangan gedung elit. Saat Doni hendak mendorong gerobak, tiba-tiba konvoi supercar berhenti. Para CEO turun dan mencium tangan Mang Budi, melaporkan bahwa seluruh tanah dan gedung tersebut adalah miliknya. Atasan Doni yang ikut panik langsung memecat Doni seketika. Mang Budi pun menutup gerobaknya lebih awal, bukan pulang dorong gerobak, tapi naik helikopter pribadi.",
     "timeline": [
       {
         "detik": "00:00-00:06",
-        "dialog_narasi": "Orang tua bau kuah bakso kayak lu nggak pantes jualan di sini! Mana uang 500 ribu?!",
-        "visual_aksi": "Preman berbadan besar memukul gerobak bakso dengan beringas",
-        "teks_layar": "MANA UANG 500 RIBU?!"
+        "dialog_narasi": "Mang Budi cuma tukang bakso keliling. Tapi jangan lihat dari gerobaknya!",
+        "visual_aksi": "Mang Budi tersenyum ramah melayani pembeli di depan gedung perkantoran mewah.",
+        "teks_layar": "Tukang Bakso Sederhana?"
       },
       {
-        "detik": "00:06-00:15",
-        "dialog_narasi": "Kalau nggak bayar, gerobak lu gue hancurin sekarang! Pak Joko cuma mengusap keringatnya dengan tenang.",
-        "visual_aksi": "Pak Joko tetap mengaduk kuah bakso tanpa rasa takut",
-        "teks_layar": "TETAP TENANG"
+        "detik": "00:06-00:18",
+        "dialog_narasi": "Doni, pria sombong bermobil mewah, memesan bakso lalu menghina Mang Budi habis-habisan.",
+        "visual_aksi": "Doni makan bakso sambil pasang muka jijik, melempar uang ke meja, lalu mengusir Mang Budi.",
+        "teks_layar": "Dihina Orang Sombong!"
       },
       {
-        "detik": "00:15-00:28",
-        "dialog_narasi": "Mas Tigor, kontrakan nomor 7 di gang mawar itu tempat tinggal ibumu kan? Tahu dari mana lu hah?!",
-        "visual_aksi": "Pak Joko menatap mata Tigor dengan wibawa yang tenang",
-        "teks_layar": "KONTRAKAN IBU KAMU KAN?"
+        "detik": "00:18-00:35",
+        "dialog_narasi": "Saat Doni mau ngusir paksa, tiba-tiba deretan supercar berhenti di depan mereka.",
+        "visual_aksi": "Konvoi mobil mewah berhenti. Para bos besar turun dan langsung mencium tangan Mang Budi dengan hormat.",
+        "teks_layar": "Plot Twist Dimulai!"
       },
       {
-        "detik": "00:28-00:42",
-        "dialog_narasi": "Tiba-tiba mobil dinas berhenti. Kepala Kawasan turun dan membungkuk hormat menyerahkan map sertifikat tanah 12 ruko.",
-        "visual_aksi": "Pejabat berdasi turun dan menyerahkan berkas emas ke Pak Joko",
-        "teks_layar": "PEMILIK 12 RUKO CASH!"
+        "detik": "00:35-00:48",
+        "dialog_narasi": "Direktur bank melaporkan bahwa seluruh gedung perkantoran mewah ini adalah milik Mang Budi.",
+        "visual_aksi": "Doni syok ketakutan melihat atasannya gemetar ketakutan di hadapan Mang Budi.",
+        "teks_layar": "Gedung Ini Milik Siapa?!"
       },
       {
-        "detik": "00:42-00:52",
-        "dialog_narasi": "Tigor terdiam kaku. Lututnya gemetar lemas dan langsung jatuh bersujud ke aspal memohon ampun.",
-        "visual_aksi": "Preman sangar menangis memegang kaki Pak Joko",
-        "teks_layar": "PREMAN BERSUJUD AMPUN!"
-      },
-      {
-        "detik": "00:52-00:60",
-        "dialog_narasi": "Hormatilah orang tua, karena kamu tidak pernah tahu doa siapa yang menopang langit! Tulis komentar: LANJUT PART 2!",
-        "visual_aksi": "Pak Joko tersenyum bijak di samping gerobaknya",
-        "teks_layar": "KOMEN: LANJUT PART 2!"
+        "detik": "00:48-01:00",
+        "dialog_narasi": "Doni langsung dipecat detik itu juga. Mang Budi tutup gerobak, siap pulang naik helikopter pribadi.",
+        "visual_aksi": "Doni lemas terduduk di lantai. Mang Budi berjalan santai menuju helipad di atap gedung.",
+        "teks_layar": "The Real Sultan!"
       }
     ]
   },
   "visual_prompts": {
-    "character_consistency": "Pak Joko: 52-year-old wise elderly Asian man, humble faded t-shirt, towel on neck. Tigor: 35-year-old muscular Asian thug, leather vest, fierce tattoos, intimidating stature.",
+    "character_consistency": "Mang Budi is a friendly middle-aged Indonesian man with a mustache, wearing a simple polo shirt and apron. Doni is a haughty young man in a sleek modern suit.",
     "shots": [
       {
         "shot": 1,
         "timecode": "00:00-00:06",
-        "prompt_en": "Vertical 9:16, dramatic low angle of a burly tattooed street thug kicking a plastic stool near an authentic Indonesian meatball cart, smoke rising from hot broth, ultra-realistic.",
-        "camera_motion": "Aggressive quick zoom",
-        "sound_fx": "Plastic crack, thug roar"
+        "prompt_en": "Vertical 9:16 video, cinematic lighting. Mang Budi, a friendly middle-aged Indonesian street food vendor, smiling warmly while serving meatballs from his modest pushcart. In the blurred background stands a luxurious modern glass skyscraper. Photorealistic, 4k.",
+        "camera_motion": "Slow pan from the pushcart up to Mang Budi's welcoming face.",
+        "sound_fx": "Ambient city street sounds, light cart wheels rolling."
       },
       {
         "shot": 2,
-        "timecode": "00:06-00:15",
-        "prompt_en": "Vertical 9:16, close up of humble elderly Indonesian meatball seller calmly wiping sweat with towel, profound serene gaze.",
-        "camera_motion": "Slow pan",
-        "sound_fx": "Soup ladle stirring, ambient night market"
+        "timecode": "00:06-00:12",
+        "prompt_en": "Vertical 9:16 video, close up shot. Doni, an arrogant young man in an expensive suit, eating meatballs with a disgusted facial expression. He tosses money rudely onto the metal table, acting condescendingly.",
+        "camera_motion": "Push in towards Doni's arrogant face.",
+        "sound_fx": "Clinking of a bowl, rustling of paper money dropped on a table."
       },
       {
         "shot": 3,
-        "timecode": "00:15-00:28",
-        "prompt_en": "Vertical 9:16, medium shot face-to-face tension, elderly man calmly speaking as thug's angry expression turns confused.",
-        "camera_motion": "Dutch angle tilt",
-        "sound_fx": "Low suspense drone"
+        "timecode": "00:12-00:18",
+        "prompt_en": "Vertical 9:16 video, medium shot. Doni aggressively pointing his finger at Mang Budi, yelling and trying to force the vendor to move his cart away from the luxury building.",
+        "camera_motion": "Handheld slight shake to emphasize tension.",
+        "sound_fx": "Angry shouting muffled, harsh street traffic."
       },
       {
         "shot": 4,
-        "timecode": "00:28-00:42",
-        "prompt_en": "Vertical 9:16, elegant government black sedan stopping by roadside, official in suit bowing deeply presenting golden land deeds to the meatball seller.",
-        "camera_motion": "Smooth tracking shot",
-        "sound_fx": "Car brakes, dramatic brass impact"
+        "timecode": "00:18-00:35",
+        "prompt_en": "Vertical 9:16 video, wide cinematic shot. A convoy of expensive supercars screeches to a halt in front of the food cart. Wealthy corporate executives step out and respectfully bow to kiss Mang Budi's hand.",
+        "camera_motion": "Pan right following the line of luxury supercars stopping abruptly.",
+        "sound_fx": "Tires screeching, car doors closing, dramatic orchestral swell."
       },
       {
         "shot": 5,
-        "timecode": "00:42-00:52",
-        "prompt_en": "Vertical 9:16, high angle shot of the arrogant thug on his knees on asphalt, trembling in tears, utter defeat.",
-        "camera_motion": "Crane down",
-        "sound_fx": "Crying gasp, deep sub bass"
+        "timecode": "00:35-00:48",
+        "prompt_en": "Vertical 9:16 video, medium shot. Doni looks completely shocked and terrified, eyes wide open, sweating. His company boss is trembling in fear while bowing deeply before Mang Budi.",
+        "camera_motion": "Rapid zoom in on Doni's shocked facial expression.",
+        "sound_fx": "Gasp of shock, tense dramatic movie sting."
       },
       {
         "shot": 6,
-        "timecode": "00:52-00:60",
-        "prompt_en": "Vertical 9:16, cinematic composition, the elderly man handing a hot bowl of soup to a street child, warm golden light, inspirational ending.",
-        "camera_motion": "Slow zoom out",
-        "sound_fx": "Inspirational uplifting violin"
+        "timecode": "00:48-01:00",
+        "prompt_en": "Vertical 9:16 video, wide shot. Doni collapses weakly onto the floor in despair. Mang Budi casually packs up his cart and walks towards a private helipad on the rooftop with a private helicopter waiting.",
+        "camera_motion": "Crane shot rising upwards, revealing the massive skyscraper rooftop and helicopter.",
+        "sound_fx": "Helicopter rotor blades spinning loudly, triumphant outro music."
       }
     ]
   },
   "distribusi": {
-    "teks_thumbnail": "PREMAN NANGIS DI KAKI OB!",
-    "caption_postingan": "Jangan pernah sok jagoan di depan orang tua! Mau malak 500 ribu, taunya yang dipalak pemilik tanah kontrakannya sendiri 😭 Komen 'LANJUT' buat Part 2!",
+    "teks_thumbnail": "BAKSO BERURIAT BERLIAN?! JUTAWAN MENDADAK JADI TUKANG BAKSO!",
+    "caption_postingan": "Niatnya mau pamer kekayaan, eh malah apes dipaksa jualan bakso urat demi bertahan hidup! 😭 Penasaran gimana perjuangan si sombong jadi tukang bakso? Tonton kelanjutan drama 'Bakso Urat Berlian' sekarang juga! Jangan lupaLike & Share ya! ✨🍜",
     "hashtags": [
-      "#ceritainspiratif",
-      "#dramalokal",
-      "#sultankakilima",
-      "#tukangbakso",
-      "#karmainstan",
-      "#fypindonesia"
+      "#BaksoUratBerlian",
+      "#DrakorLokal",
+      "#DramaIndonesia",
+      "#ShortMovie",
+      "#TrendingTikTok",
+      "#DramaViral",
+      "#FypIndonesia",
+      "#RekomendasiDrama",
+      "#NontonDrama",
+      "#KisahViral"
     ]
   }
 }

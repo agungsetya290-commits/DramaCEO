@@ -1,0 +1,115 @@
+{
+  "tanggal": "2026-11-23",
+  "jam": "00:38 WIB",
+  "mode": "AI Live Generation (Gemini)",
+  "kategori": "Tukang Bakso Kaki Lima Sultan",
+  "ide": {
+    "judul": "Bakso Urat Berlian",
+    "karakter": {
+      "protagonis": "Mang Budi (Tukang bakso keliling sederhana yang aslinya pemilik mall dan tanah di seluruh kota)",
+      "antagonis": "Doni (Pelanggan sombong, pamer mobil mewah, dan mantan pacar anak Mang Budi)"
+    },
+    "situasi_penghinaan": "Doni memesan semangkuk bakso, lalu menghina Mang Budi miskin, jorok, dan mengusirnya dari depan gedung perkantoran elit karena dianggap merusak pemandangan.",
+    "plot_twist": "Saat Doni hendak mengusir paksa, datang deretan mobil mewah (Supercar) beriringan. Para CEO dan direktur bank turun, mencium tangan Mang Budi, dan melaporkan bahwa gedung tempat Doni bekerja adalah milik Mang Budi.",
+    "ending": "Doni dipecat seketika oleh pemilik gedung (atasan bosnya) yang merupakan rekan bisnis Mang Budi, sementara Mang Budi menutup gerobaknya lebih awal untuk pulang naik helikopter pribadi."
+  },
+  "naskah": {
+    "hook_awal": "Jualan bakso keliling dikira miskin dan diusir, gak tau aja dia pemilik gedung elit ini!",
+    "naskah_voiceover_lengkap": "Mang Budi, tukang bakso keliling yang sering diremehkan. Hari ini, ia mangkal di depan gedung perkantoran mewah. Doni, pelanggan sombong yang juga mantan pacar anak Mang Budi, datang memesan bakso lalu menghinanya habis-habisan. Doni mengusir Mang Budi karena dianggap merusak pemandangan gedung elit. Saat Doni hendak mendorong gerobak, tiba-tiba konvoi supercar berhenti. Para CEO turun dan mencium tangan Mang Budi, melaporkan bahwa seluruh tanah dan gedung tersebut adalah miliknya. Atasan Doni yang ikut panik langsung memecat Doni seketika. Mang Budi pun menutup gerobaknya lebih awal, bukan pulang dorong gerobak, tapi naik helikopter pribadi.",
+    "timeline": [
+      {
+        "detik": "00:00-00:06",
+        "dialog_narasi": "Mang Budi cuma tukang bakso keliling. Tapi jangan lihat dari gerobaknya!",
+        "visual_aksi": "Mang Budi tersenyum ramah melayani pembeli di depan gedung perkantoran mewah.",
+        "teks_layar": "Tukang Bakso Sederhana?"
+      },
+      {
+        "detik": "00:06-00:18",
+        "dialog_narasi": "Doni, pria sombong bermobil mewah, memesan bakso lalu menghina Mang Budi habis-habisan.",
+        "visual_aksi": "Doni makan bakso sambil pasang muka jijik, melempar uang ke meja, lalu mengusir Mang Budi.",
+        "teks_layar": "Dihina Orang Sombong!"
+      },
+      {
+        "detik": "00:18-00:35",
+        "dialog_narasi": "Saat Doni mau ngusir paksa, tiba-tiba deretan supercar berhenti di depan mereka.",
+        "visual_aksi": "Konvoi mobil mewah berhenti. Para bos besar turun dan langsung mencium tangan Mang Budi dengan hormat.",
+        "teks_layar": "Plot Twist Dimulai!"
+      },
+      {
+        "detik": "00:35-00:48",
+        "dialog_narasi": "Direktur bank melaporkan bahwa seluruh gedung perkantoran mewah ini adalah milik Mang Budi.",
+        "visual_aksi": "Doni syok ketakutan melihat atasannya gemetar ketakutan di hadapan Mang Budi.",
+        "teks_layar": "Gedung Ini Milik Siapa?!"
+      },
+      {
+        "detik": "00:48-01:00",
+        "dialog_narasi": "Doni langsung dipecat detik itu juga. Mang Budi tutup gerobak, siap pulang naik helikopter pribadi.",
+        "visual_aksi": "Doni lemas terduduk di lantai. Mang Budi berjalan santai menuju helipad di atap gedung.",
+        "teks_layar": "The Real Sultan!"
+      }
+    ]
+  },
+  "visual_prompts": {
+    "character_consistency": "Mang Budi is a friendly middle-aged Indonesian man with a mustache, wearing a simple polo shirt and apron. Doni is a haughty young man in a sleek modern suit.",
+    "shots": [
+      {
+        "shot": 1,
+        "timecode": "00:00-00:06",
+        "prompt_en": "Vertical 9:16 video, cinematic lighting. Mang Budi, a friendly middle-aged Indonesian street food vendor, smiling warmly while serving meatballs from his modest pushcart. In the blurred background stands a luxurious modern glass skyscraper. Photorealistic, 4k.",
+        "camera_motion": "Slow pan from the pushcart up to Mang Budi's welcoming face.",
+        "sound_fx": "Ambient city street sounds, light cart wheels rolling."
+      },
+      {
+        "shot": 2,
+        "timecode": "00:06-00:12",
+        "prompt_en": "Vertical 9:16 video, close up shot. Doni, an arrogant young man in an expensive suit, eating meatballs with a disgusted facial expression. He tosses money rudely onto the metal table, acting condescendingly.",
+        "camera_motion": "Push in towards Doni's arrogant face.",
+        "sound_fx": "Clinking of a bowl, rustling of paper money dropped on a table."
+      },
+      {
+        "shot": 3,
+        "timecode": "00:12-00:18",
+        "prompt_en": "Vertical 9:16 video, medium shot. Doni aggressively pointing his finger at Mang Budi, yelling and trying to force the vendor to move his cart away from the luxury building.",
+        "camera_motion": "Handheld slight shake to emphasize tension.",
+        "sound_fx": "Angry shouting muffled, harsh street traffic."
+      },
+      {
+        "shot": 4,
+        "timecode": "00:18-00:35",
+        "prompt_en": "Vertical 9:16 video, wide cinematic shot. A convoy of expensive supercars screeches to a halt in front of the food cart. Wealthy corporate executives step out and respectfully bow to kiss Mang Budi's hand.",
+        "camera_motion": "Pan right following the line of luxury supercars stopping abruptly.",
+        "sound_fx": "Tires screeching, car doors closing, dramatic orchestral swell."
+      },
+      {
+        "shot": 5,
+        "timecode": "00:35-00:48",
+        "prompt_en": "Vertical 9:16 video, medium shot. Doni looks completely shocked and terrified, eyes wide open, sweating. His company boss is trembling in fear while bowing deeply before Mang Budi.",
+        "camera_motion": "Rapid zoom in on Doni's shocked facial expression.",
+        "sound_fx": "Gasp of shock, tense dramatic movie sting."
+      },
+      {
+        "shot": 6,
+        "timecode": "00:48-01:00",
+        "prompt_en": "Vertical 9:16 video, wide shot. Doni collapses weakly onto the floor in despair. Mang Budi casually packs up his cart and walks towards a private helipad on the rooftop with a private helicopter waiting.",
+        "camera_motion": "Crane shot rising upwards, revealing the massive skyscraper rooftop and helicopter.",
+        "sound_fx": "Helicopter rotor blades spinning loudly, triumphant outro music."
+      }
+    ]
+  },
+  "distribusi": {
+    "teks_thumbnail": "BAKSO BERURIAT BERLIAN?! JUTAWAN MENDADAK JADI TUKANG BAKSO!",
+    "caption_postingan": "Niatnya mau pamer kekayaan, eh malah apes dipaksa jualan bakso urat demi bertahan hidup! 😭 Penasaran gimana perjuangan si sombong jadi tukang bakso? Tonton kelanjutan drama 'Bakso Urat Berlian' sekarang juga! Jangan lupaLike & Share ya! ✨🍜",
+    "hashtags": [
+      "#BaksoUratBerlian",
+      "#DrakorLokal",
+      "#DramaIndonesia",
+      "#ShortMovie",
+      "#TrendingTikTok",
+      "#DramaViral",
+      "#FypIndonesia",
+      "#RekomendasiDrama",
+      "#NontonDrama",
+      "#KisahViral"
+    ]
+  }
+}
