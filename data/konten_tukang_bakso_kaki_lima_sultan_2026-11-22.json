@@ -1,0 +1,118 @@
+{
+  "tanggal": "2026-11-22",
+  "jam": "14:38 WIB",
+  "mode": "Jaring Pengaman (Editorial Viral Template)",
+  "kategori": "Tukang Bakso Kaki Lima Sultan",
+  "ide": {
+    "kategori": "Tukang Bakso Kaki Lima Sultan",
+    "judul": "DIPALAK PREMAN DI PINGGIR JALAN, TERNYATA PEMILIK 12 RUKO!",
+    "karakter": {
+      "protagonis": "Pak Joko (52 tahun, kaos oblong abu-abu, handuk kecil di leher, penjual bakso gerobak)",
+      "antagonis": "Bang Tigor (35 tahun, jaket kulit robek, tato di lengan, preman pasar yang suka memeras pedagang)"
+    },
+    "situasi_penghinaan": "Tigor menendang kursi plastik bakso, meminta jatah uang keamanan 500 ribu dan menghina Pak Joko cuma pedagang miskin yang mengotori jalan.",
+    "plot_twist": "Pak Joko menelepon seseorang. Lima menit kemudian, mobil dinas Satpol PP dan Kepala Pengelola Kawasan datang, mencium tangan Pak Joko dan menyerahkan surat sertifikat kepemilikan 12 ruko tempat Tigor tinggal.",
+    "ending": "Tigor langsung bersujud mencium kaki Pak Joko memohon agar kontrakan keluarganya tidak digusur."
+  },
+  "naskah": {
+    "hook_awal": "Jangan remehkan bapak tukang bakso gerobak ini, ruko tempat kamu tinggal itu milik dia!",
+    "naskah_voiceover_lengkap": "Orang tua bau kuah bakso kayak lu nggak pantes jualan di sini! Mana uang 500 ribu?! Kalau nggak bayar, gerobak lu gue hancurin sekarang! Bang Tigor menendang kursi bakso sampai patah. Pak Joko cuma mengusap keringatnya dengan tenang. Mas Tigor, kontrakan nomor 7 di gang mawar itu tempat tinggal ibumu kan? Tahu dari mana lu orang tua bangsat?! Tiba-tiba iring-iringan mobil dinas berhenti. Kepala Pengelola Kawasan turun tergesa-gesa dan membungkuk hormat. Selamat sore Pak Haji Joko, ini berkas kepemilikan 12 ruko dan kontrakan yang Bapak beli secara tunai kemarin. Tigor terdiam kaku. Lututnya gemetar lemas ke aspal. Komen LANJUT PART 2!",
+    "timeline": [
+      {
+        "detik": "00:00-00:06",
+        "dialog_narasi": "Orang tua bau kuah bakso kayak lu nggak pantes jualan di sini! Mana uang 500 ribu?!",
+        "visual_aksi": "Preman berbadan besar memukul gerobak bakso dengan beringas",
+        "teks_layar": "MANA UANG 500 RIBU?!"
+      },
+      {
+        "detik": "00:06-00:15",
+        "dialog_narasi": "Kalau nggak bayar, gerobak lu gue hancurin sekarang! Pak Joko cuma mengusap keringatnya dengan tenang.",
+        "visual_aksi": "Pak Joko tetap mengaduk kuah bakso tanpa rasa takut",
+        "teks_layar": "TETAP TENANG"
+      },
+      {
+        "detik": "00:15-00:28",
+        "dialog_narasi": "Mas Tigor, kontrakan nomor 7 di gang mawar itu tempat tinggal ibumu kan? Tahu dari mana lu hah?!",
+        "visual_aksi": "Pak Joko menatap mata Tigor dengan wibawa yang tenang",
+        "teks_layar": "KONTRAKAN IBU KAMU KAN?"
+      },
+      {
+        "detik": "00:28-00:42",
+        "dialog_narasi": "Tiba-tiba mobil dinas berhenti. Kepala Kawasan turun dan membungkuk hormat menyerahkan map sertifikat tanah 12 ruko.",
+        "visual_aksi": "Pejabat berdasi turun dan menyerahkan berkas emas ke Pak Joko",
+        "teks_layar": "PEMILIK 12 RUKO CASH!"
+      },
+      {
+        "detik": "00:42-00:52",
+        "dialog_narasi": "Tigor terdiam kaku. Lututnya gemetar lemas dan langsung jatuh bersujud ke aspal memohon ampun.",
+        "visual_aksi": "Preman sangar menangis memegang kaki Pak Joko",
+        "teks_layar": "PREMAN BERSUJUD AMPUN!"
+      },
+      {
+        "detik": "00:52-00:60",
+        "dialog_narasi": "Hormatilah orang tua, karena kamu tidak pernah tahu doa siapa yang menopang langit! Tulis komentar: LANJUT PART 2!",
+        "visual_aksi": "Pak Joko tersenyum bijak di samping gerobaknya",
+        "teks_layar": "KOMEN: LANJUT PART 2!"
+      }
+    ]
+  },
+  "visual_prompts": {
+    "character_consistency": "Pak Joko: 52-year-old wise elderly Asian man, humble faded t-shirt, towel on neck. Tigor: 35-year-old muscular Asian thug, leather vest, fierce tattoos, intimidating stature.",
+    "shots": [
+      {
+        "shot": 1,
+        "timecode": "00:00-00:06",
+        "prompt_en": "Vertical 9:16, dramatic low angle of a burly tattooed street thug kicking a plastic stool near an authentic Indonesian meatball cart, smoke rising from hot broth, ultra-realistic.",
+        "camera_motion": "Aggressive quick zoom",
+        "sound_fx": "Plastic crack, thug roar"
+      },
+      {
+        "shot": 2,
+        "timecode": "00:06-00:15",
+        "prompt_en": "Vertical 9:16, close up of humble elderly Indonesian meatball seller calmly wiping sweat with towel, profound serene gaze.",
+        "camera_motion": "Slow pan",
+        "sound_fx": "Soup ladle stirring, ambient night market"
+      },
+      {
+        "shot": 3,
+        "timecode": "00:15-00:28",
+        "prompt_en": "Vertical 9:16, medium shot face-to-face tension, elderly man calmly speaking as thug's angry expression turns confused.",
+        "camera_motion": "Dutch angle tilt",
+        "sound_fx": "Low suspense drone"
+      },
+      {
+        "shot": 4,
+        "timecode": "00:28-00:42",
+        "prompt_en": "Vertical 9:16, elegant government black sedan stopping by roadside, official in suit bowing deeply presenting golden land deeds to the meatball seller.",
+        "camera_motion": "Smooth tracking shot",
+        "sound_fx": "Car brakes, dramatic brass impact"
+      },
+      {
+        "shot": 5,
+        "timecode": "00:42-00:52",
+        "prompt_en": "Vertical 9:16, high angle shot of the arrogant thug on his knees on asphalt, trembling in tears, utter defeat.",
+        "camera_motion": "Crane down",
+        "sound_fx": "Crying gasp, deep sub bass"
+      },
+      {
+        "shot": 6,
+        "timecode": "00:52-00:60",
+        "prompt_en": "Vertical 9:16, cinematic composition, the elderly man handing a hot bowl of soup to a street child, warm golden light, inspirational ending.",
+        "camera_motion": "Slow zoom out",
+        "sound_fx": "Inspirational uplifting violin"
+      }
+    ]
+  },
+  "distribusi": {
+    "teks_thumbnail": "PREMAN NANGIS DI KAKI OB!",
+    "caption_postingan": "Jangan pernah sok jagoan di depan orang tua! Mau malak 500 ribu, taunya yang dipalak pemilik tanah kontrakannya sendiri 😭 Komen 'LANJUT' buat Part 2!",
+    "hashtags": [
+      "#ceritainspiratif",
+      "#dramalokal",
+      "#sultankakilima",
+      "#tukangbakso",
+      "#karmainstan",
+      "#fypindonesia"
+    ]
+  }
+}
