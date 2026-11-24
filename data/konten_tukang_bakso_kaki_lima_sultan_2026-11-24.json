@@ -1,118 +1,109 @@
 {
   "tanggal": "2026-11-24",
-  "jam": "04:54 WIB",
-  "mode": "Jaring Pengaman (Editorial Viral Template)",
+  "jam": "17:34 WIB",
+  "mode": "AI Live Generation (Gemini)",
   "kategori": "Tukang Bakso Kaki Lima Sultan",
   "ide": {
-    "kategori": "Tukang Bakso Kaki Lima Sultan",
-    "judul": "DIPALAK PREMAN DI PINGGIR JALAN, TERNYATA PEMILIK 12 RUKO!",
+    "judul": "Bakso Urat Berlian",
     "karakter": {
-      "protagonis": "Pak Joko (52 tahun, kaos oblong abu-abu, handuk kecil di leher, penjual bakso gerobak)",
-      "antagonis": "Bang Tigor (35 tahun, jaket kulit robek, tato di lengan, preman pasar yang suka memeras pedagang)"
+      "protagonis": "Mang Budi (Tukang bakso keliling sederhana yang aslinya pemilik mall dan tanah di seluruh kota)",
+      "antagonis": "Siska (Pelanggan sombong dan influencer pansos yang suka menghina pedagang kecil)"
     },
-    "situasi_penghinaan": "Tigor menendang kursi plastik bakso, meminta jatah uang keamanan 500 ribu dan menghina Pak Joko cuma pedagang miskin yang mengotori jalan.",
-    "plot_twist": "Pak Joko menelepon seseorang. Lima menit kemudian, mobil dinas Satpol PP dan Kepala Pengelola Kawasan datang, mencium tangan Pak Joko dan menyerahkan surat sertifikat kepemilikan 12 ruko tempat Tigor tinggal.",
-    "ending": "Tigor langsung bersujud mencium kaki Pak Joko memohon agar kontrakan keluarganya tidak digusur."
+    "situasi_penghinaan": "Siska tidak sengaja menumpahkan semangkuk bakso Mang Budi, lalu mencaci maki dan menuduh baksonya beracun serta murahan. Siska bahkan menyiram sisa bakso ke kepala Mang Budi dan menuntut ganti rugi jutaan rupiah di depan umum.",
+    "plot_twist": "Saat Siska memanggil satpam untuk menyeret Mang Budi, datanglah jajaran direksi mall tempat Siska berdiri dan para pengusaha kaya raya yang langsung mencium tangan Mang Budi sambil memanggilnya 'Boss Besar'.",
+    "ending": "Mang Budi membeli mall tempat Siska biasa pamer kemewahan, lalu mengusir Siska secara permanen. Siska yang jatuh miskin akhirnya harus bekerja sebagai pelayan cuci piring di warung bakso Mang Budi."
   },
   "naskah": {
-    "hook_awal": "Jangan remehkan bapak tukang bakso gerobak ini, ruko tempat kamu tinggal itu milik dia!",
-    "naskah_voiceover_lengkap": "Orang tua bau kuah bakso kayak lu nggak pantes jualan di sini! Mana uang 500 ribu?! Kalau nggak bayar, gerobak lu gue hancurin sekarang! Bang Tigor menendang kursi bakso sampai patah. Pak Joko cuma mengusap keringatnya dengan tenang. Mas Tigor, kontrakan nomor 7 di gang mawar itu tempat tinggal ibumu kan? Tahu dari mana lu orang tua bangsat?! Tiba-tiba iring-iringan mobil dinas berhenti. Kepala Pengelola Kawasan turun tergesa-gesa dan membungkuk hormat. Selamat sore Pak Haji Joko, ini berkas kepemilikan 12 ruko dan kontrakan yang Bapak beli secara tunai kemarin. Tigor terdiam kaku. Lututnya gemetar lemas ke aspal. Komen LANJUT PART 2!",
+    "hook_awal": "Hina tukang bakso keliling, influencer sombong ini berujung jadi pencuci piring!",
+    "naskah_voiceover_lengkap": "Mang Budi terlihat seperti tukang bakso biasa, tapi siapa sangka dia pemilik kota ini! Saat Siska dengan sombongnya menumpahkan bakso, menuduhnya beracun, dan menyiramkannya ke kepala Mang Budi sambil minta ganti rugi, Siska tidak tahu dengan siapa dia berurusan. Saat satpam dipanggil untuk menyeret Mang Budi, para direksi mall datang dan mencium tangannya sambil memanggil 'Boss Besar'. Seketika itu juga, Mang Budi membeli mall tersebut dan mengusir Siska. Kini, Siska si influencer sombong harus berakhir menjadi pencuci piring di warung bakso Mang Budi.",
     "timeline": [
       {
         "detik": "00:00-00:06",
-        "dialog_narasi": "Orang tua bau kuah bakso kayak lu nggak pantes jualan di sini! Mana uang 500 ribu?!",
-        "visual_aksi": "Preman berbadan besar memukul gerobak bakso dengan beringas",
-        "teks_layar": "MANA UANG 500 RIBU?!"
+        "dialog_narasi": "Mang Budi terlihat seperti tukang bakso biasa, tapi siapa sangka dia pemilik kota ini!",
+        "visual_aksi": "Mang Budi melayani pembeli dengan ramah di gerobak baksonya.",
+        "teks_layar": "Tukang Bakso Berhati Malaikat"
       },
       {
-        "detik": "00:06-00:15",
-        "dialog_narasi": "Kalau nggak bayar, gerobak lu gue hancurin sekarang! Pak Joko cuma mengusap keringatnya dengan tenang.",
-        "visual_aksi": "Pak Joko tetap mengaduk kuah bakso tanpa rasa takut",
-        "teks_layar": "TETAP TENANG"
+        "detik": "00:06-00:20",
+        "dialog_narasi": "Saat Siska dengan sombongnya menumpahkan bakso, menuduhnya beracun, dan menyiramkannya ke kepala Mang Budi.",
+        "visual_aksi": "Siska sengaja menumpahkan mangkok, memarahi Mang Budi, lalu menyiram sisa kuah ke kepala Mang Budi.",
+        "teks_layar": "Influencer Sombong Ngamuk!"
       },
       {
-        "detik": "00:15-00:28",
-        "dialog_narasi": "Mas Tigor, kontrakan nomor 7 di gang mawar itu tempat tinggal ibumu kan? Tahu dari mana lu hah?!",
-        "visual_aksi": "Pak Joko menatap mata Tigor dengan wibawa yang tenang",
-        "teks_layar": "KONTRAKAN IBU KAMU KAN?"
+        "detik": "00:20-00:35",
+        "dialog_narasi": "Saat satpam dipanggil untuk menyeret Mang Budi, para direksi mall datang dan mencium tangannya.",
+        "visual_aksi": "Sekelompok orang berdandan jas rapi datang, membungkuk, dan mencium tangan Mang Budi dengan hormat.",
+        "teks_layar": "Plot Twist! Boss Besar Datang!"
       },
       {
-        "detik": "00:28-00:42",
-        "dialog_narasi": "Tiba-tiba mobil dinas berhenti. Kepala Kawasan turun dan membungkuk hormat menyerahkan map sertifikat tanah 12 ruko.",
-        "visual_aksi": "Pejabat berdasi turun dan menyerahkan berkas emas ke Pak Joko",
-        "teks_layar": "PEMILIK 12 RUKO CASH!"
-      },
-      {
-        "detik": "00:42-00:52",
-        "dialog_narasi": "Tigor terdiam kaku. Lututnya gemetar lemas dan langsung jatuh bersujud ke aspal memohon ampun.",
-        "visual_aksi": "Preman sangar menangis memegang kaki Pak Joko",
-        "teks_layar": "PREMAN BERSUJUD AMPUN!"
-      },
-      {
-        "detik": "00:52-00:60",
-        "dialog_narasi": "Hormatilah orang tua, karena kamu tidak pernah tahu doa siapa yang menopang langit! Tulis komentar: LANJUT PART 2!",
-        "visual_aksi": "Pak Joko tersenyum bijak di samping gerobaknya",
-        "teks_layar": "KOMEN: LANJUT PART 2!"
+        "detik": "00:35-00:60",
+        "dialog_narasi": "Mang Budi membeli mall tersebut dan mengusir Siska. Kini Siska berakhir jadi pencuci piring di warung bakso Mang Budi.",
+        "visual_aksi": "Mang Budi tanda tangani surat pembelian mall, Siska diusir satpam, lalu Scene berpindah Siska pakai apron mencuci mangkuk bakso.",
+        "teks_layar": "Karma Dibayar Kontan!"
       }
     ]
   },
   "visual_prompts": {
-    "character_consistency": "Pak Joko: 52-year-old wise elderly Asian man, humble faded t-shirt, towel on neck. Tigor: 35-year-old muscular Asian thug, leather vest, fierce tattoos, intimidating stature.",
+    "character_consistency": "Mang Budi is a friendly middle-aged Indonesian man with a mustache, wearing a simple merchant shirt and apron. Siska is a trendy, arrogant young woman in modern stylish clothes. Security guards wear standard mall uniform.",
     "shots": [
       {
         "shot": 1,
         "timecode": "00:00-00:06",
-        "prompt_en": "Vertical 9:16, dramatic low angle of a burly tattooed street thug kicking a plastic stool near an authentic Indonesian meatball cart, smoke rising from hot broth, ultra-realistic.",
-        "camera_motion": "Aggressive quick zoom",
-        "sound_fx": "Plastic crack, thug roar"
+        "prompt_en": "Vertical 9:16 video. A friendly middle-aged Indonesian street food vendor serving meatballs with a warm smile from his pushcart in a busy public area, cinematic lighting, photorealistic, 4k.",
+        "camera_motion": "Slow pan left to right",
+        "sound_fx": "Bustling street sounds, clattering bowls"
       },
       {
         "shot": 2,
-        "timecode": "00:06-00:15",
-        "prompt_en": "Vertical 9:16, close up of humble elderly Indonesian meatball seller calmly wiping sweat with towel, profound serene gaze.",
-        "camera_motion": "Slow pan",
-        "sound_fx": "Soup ladle stirring, ambient night market"
+        "timecode": "00:06-00:13",
+        "prompt_en": "Vertical 9:16 video. An arrogant young woman angrily knocking over a bowl of meatball soup, shouting furiously at the shocked vendor, dramatic close-up, high tension, cinematic.",
+        "camera_motion": "Handheld fast zoom in on the action",
+        "sound_fx": "Shattering ceramic, angry yelling"
       },
       {
         "shot": 3,
-        "timecode": "00:15-00:28",
-        "prompt_en": "Vertical 9:16, medium shot face-to-face tension, elderly man calmly speaking as thug's angry expression turns confused.",
-        "camera_motion": "Dutch angle tilt",
-        "sound_fx": "Low suspense drone"
+        "timecode": "00:13-00:20",
+        "prompt_en": "Vertical 9:16 video. The arrogant young woman pours the remaining broth over the humble vendor's head, humiliating him in public, cinematic dramatic lighting, 4k.",
+        "camera_motion": "Static medium shot with slight shake",
+        "sound_fx": "Liquid splashing, gasping crowd"
       },
       {
         "shot": 4,
-        "timecode": "00:28-00:42",
-        "prompt_en": "Vertical 9:16, elegant government black sedan stopping by roadside, official in suit bowing deeply presenting golden land deeds to the meatball seller.",
-        "camera_motion": "Smooth tracking shot",
-        "sound_fx": "Car brakes, dramatic brass impact"
+        "timecode": "00:20-00:27",
+        "prompt_en": "Vertical 9:16 video. A group of wealthy corporate executives in sharp black suits urgently running over, bowing deeply in extreme respect, and kissing the humble vendor's hand, dramatic plot twist, cinematic.",
+        "camera_motion": "Dynamic tracking shot orbiting the group",
+        "sound_fx": "Dramatic musical swell, gasps"
       },
       {
         "shot": 5,
-        "timecode": "00:42-00:52",
-        "prompt_en": "Vertical 9:16, high angle shot of the arrogant thug on his knees on asphalt, trembling in tears, utter defeat.",
-        "camera_motion": "Crane down",
-        "sound_fx": "Crying gasp, deep sub bass"
+        "timecode": "00:27-00:35",
+        "prompt_en": "Vertical 9:16 video. The vendor signing official property deed documents with corporate style, while the arrogant woman is being dragged away by security guards in utter shock, cinematic 4k.",
+        "camera_motion": "Smooth push in on the signing hand",
+        "sound_fx": "Document signing sound, weeping and shouting"
       },
       {
         "shot": 6,
-        "timecode": "00:52-00:60",
-        "prompt_en": "Vertical 9:16, cinematic composition, the elderly man handing a hot bowl of soup to a street child, warm golden light, inspirational ending.",
-        "camera_motion": "Slow zoom out",
-        "sound_fx": "Inspirational uplifting violin"
+        "timecode": "00:35-00:60",
+        "prompt_en": "Vertical 9:16 video. The arrogant woman now wearing a worn apron, miserably washing dirty bowls at the vendor's meatball cart, poetic justice, cinematic lighting, 4k.",
+        "camera_motion": "Slow pull back revealing the scene",
+        "sound_fx": "Water splashing, melancholic background music"
       }
     ]
   },
   "distribusi": {
-    "teks_thumbnail": "PREMAN NANGIS DI KAKI OB!",
-    "caption_postingan": "Jangan pernah sok jagoan di depan orang tua! Mau malak 500 ribu, taunya yang dipalak pemilik tanah kontrakannya sendiri 😭 Komen 'LANJUT' buat Part 2!",
+    "teks_thumbnail": "BAKSO BERURIAT BERLIAN?! JUALANNYA MALAH BIKIN WARGA GEMPAR!",
+    "caption_postingan": "Niatnya cuma mau jualan bakso urat biar laris, eh pembelinya malah nemuin benda berkilau di dalam baksonya! 😱 Siapa sangka rahasia masa lalu pedagang ini akhirnya terbongkar gara-gara semangkuk bakso? Tonton kelanjutan drama 'Bakso Urat Berlian' sekarang juga sebelum ketinggalan! 😭✨ #DramaIndonesia #BaksoUratBerlian",
     "hashtags": [
-      "#ceritainspiratif",
-      "#dramalokal",
-      "#sultankakilima",
-      "#tukangbakso",
-      "#karmainstan",
-      "#fypindonesia"
+      "BaksoUratBerlian",
+      "DramaIndonesia",
+      "FypTikTok",
+      "ShortsDrama",
+      "DramaViral",
+      "CeritaRakyat",
+      "FilmPendek",
+      "DramaTrending",
+      "NontonDrama",
+      "KisahNyata"
     ]
   }
 }
