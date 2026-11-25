@@ -1,0 +1,120 @@
+{
+  "tanggal": "2026-11-26",
+  "jam": "02:47 WIB",
+  "mode": "Jaring Pengaman (Editorial Viral Template)",
+  "kategori": "POV Warteg / Angkringan",
+  "ide": {
+    "kategori": "POV Warteg / Angkringan",
+    "judul": "MAKAN DI WARTEG BAJU KUSUT, PAS BAYAR SALDO 85 MILIAR!",
+    "karakter": {
+      "protagonis": "Rian (23 tahun, kaos oblong putih lusuh, celana pendek, sandal jepit)",
+      "antagonis": "Danu (30 tahun, kemeja rapi mengkilap, jam tangan emas kw, pamer kunci mobil cicilan)"
+    },
+    "situasi_penghinaan": "Danu menyindir Rian yang cuma makan nasi setengah sama orek tempe, bilang anak muda sekarang malas dan tidak punya masa depan.",
+    "plot_twist": "Pas mau bayar, kasir bilang total 15 ribu. Rian buka m-banking BCA Prioritas untuk scan QRIS, saldo terlihat 85.420.000.000 rupiah. Rian sekalian bayarin semua orang di warteg.",
+    "ending": "Danu melotot tersedak es teh, langsung buru-buru menyembunyikan kunci mobilnya ke dalam kantong."
+  },
+  "naskah": {
+    "hook_awal": "Makan di warteg nasi tempe orek, tapi pas buka m-banking saldonya bikin kasir gemetar!",
+    "naskah_voiceover_lengkap": "Anak muda sekarang gayanya doang elit, tapi makan di warteg cuma kuat beli tempe orek! Gaji UMR ya mas? Sini saya traktir es teh biar nggak melas! Rian cuma tersenyum tipis sambil mengunyah kerupuk. Mbak, total semuanya berapa ya sama punya mas yang di sebelah? Lima belas ribu mas... Pas scan QRIS, layar HP Rian menyala. Saldo rekening utama: delapan puluh lima miliar rupiah. Mbak, kembaliannya ambil aja, sama tolong bungkusin 50 porsi buat warga sekitar ya. Pria yang tadi pamer mendadak pucat dan tersedak es tehnya. Jangan pernah nilai isi dompet seseorang dari sandal jepit yang dia pakai! Tulis di komentar: LANJUT PART 2!",
+    "timeline": [
+      {
+        "detik": "00:00-00:06",
+        "dialog_narasi": "Anak muda sekarang gayanya doang elit, tapi makan di warteg cuma kuat beli tempe orek! Gaji UMR ya mas?",
+        "visual_aksi": "Pria berjas rapi menatap remeh ke arah Rian yang berbaju oblong",
+        "teks_layar": "CUMA KUAT BELI TEMPE OREK?!"
+      },
+      {
+        "detik": "00:06-00:15",
+        "dialog_narasi": "Sini saya traktir es teh biar nggak melas! Rian cuma tersenyum tipis sambil mengunyah kerupuk.",
+        "visual_aksi": "Rian tetap santai menyuap nasi tanpa terpancing emosi",
+        "teks_layar": "SINI SAYA TRAKTIR!"
+      },
+      {
+        "detik": "00:15-00:28",
+        "dialog_narasi": "Mbak, total semuanya berapa ya sama punya mas yang di sebelah? Lima belas ribu mas...",
+        "visual_aksi": "Rian mengeluarkan ponsel titanium hitam dan membuka aplikasi mobile banking",
+        "teks_layar": "TOTAL LIMA BELAS RIBU"
+      },
+      {
+        "detik": "00:28-00:42",
+        "dialog_narasi": "Pas scan QRIS, layar HP menyala. Saldo rekening utama: 85 miliar rupiah! Mbak, sekalian tolong bungkusin 50 porsi buat warga sekitar.",
+        "visual_aksi": "Close up layar HP menampilkan saldo fantastis 85 Miliar. Ibu warteg kaget melotot.",
+        "teks_layar": "SALDO: RP 85.420.000.000"
+      },
+      {
+        "detik": "00:42-00:52",
+        "dialog_narasi": "Pria yang tadi pamer mendadak pucat pasi dan tersedak es tehnya, buru-buru menyembunyikan kunci mobilnya.",
+        "visual_aksi": "Danu batuk-batuk syok, tangannya gemetar menaruh gelas es teh",
+        "teks_layar": "LANGSUNG KERINGAT DINGIN!"
+      },
+      {
+        "detik": "00:52-00:60",
+        "dialog_narasi": "Jangan pernah nilai isi dompet seseorang dari sandal jepit yang dia pakai! Tulis di komentar: LANJUT PART 2!",
+        "visual_aksi": "Rian melangkah keluar santai dijemput mobil Alphard hitam",
+        "teks_layar": "KOMEN: LANJUT PART 2!"
+      }
+    ]
+  },
+  "visual_prompts": {
+    "character_consistency": "Rian: 24-year-old Asian man, humble casual t-shirt and shorts, calm smile. Danu: 30-year-old Asian man, sleek combed hair, sharp collared shirt, haughty expression.",
+    "shots": [
+      {
+        "shot": 1,
+        "timecode": "00:00-00:06",
+        "prompt_en": "Vertical 9:16, low angle shot inside a vibrant Indonesian warteg street food stall. An arrogant well-dressed man pointing mocking finger at a humble young customer eating simple food. Cinematic dramatic lighting, hyper-realistic, 4k.",
+        "camera_motion": "Slow zoom in",
+        "sound_fx": "Street ambiance, arrogant chuckle"
+      },
+      {
+        "shot": 2,
+        "timecode": "00:06-00:15",
+        "prompt_en": "Vertical 9:16, medium shot of young humble Asian man in simple white shirt calmly smiling, holding food spoon, completely unfazed. Warm soft lighting, depth of field.",
+        "camera_motion": "Static focus",
+        "sound_fx": "Chewing sound, soft background clatter"
+      },
+      {
+        "shot": 3,
+        "timecode": "00:15-00:28",
+        "prompt_en": "Vertical 9:16, close up of a luxury titanium smartphone in a casual hand scanning QR code at wooden counter. Screen glowing brightly.",
+        "camera_motion": "Tracking shot",
+        "sound_fx": "QR scan beep"
+      },
+      {
+        "shot": 4,
+        "timecode": "00:28-00:42",
+        "prompt_en": "Vertical 9:16, extreme macro close up of banking app screen showing astronomical balance 'Rp 85,420,000,000'. High-tech screen reflection in stunned female cashier's eyes.",
+        "camera_motion": "Crash zoom",
+        "sound_fx": "Dramatic bass drop horn"
+      },
+      {
+        "shot": 5,
+        "timecode": "00:42-00:52",
+        "prompt_en": "Vertical 9:16, wide angle of arrogant man choking on his iced tea, eyes wide in absolute shock, trembling hands hiding car keys on wooden table.",
+        "camera_motion": "Slight shake",
+        "sound_fx": "Choking cough, glass thud"
+      },
+      {
+        "shot": 6,
+        "timecode": "00:52-00:60",
+        "prompt_en": "Vertical 9:16, cinematic outdoor shot of the young humble man stepping into a luxury black executive van parked outside humble street stall. Epic sunset rim lighting.",
+        "camera_motion": "Slow dolly out",
+        "sound_fx": "Car door slide, triumphant rising strings"
+      }
+    ]
+  },
+  "distribusi": {
+    "teks_thumbnail": "SALDO 85 MILIAR DI WARTEG!",
+    "caption_postingan": "Makanya mas, jangan suka meremehkan orang dari penampilannya! Siapa sangka yang makan tempe orek ternyata pemilik kawasan ruko 😱 Komen 'LANJUT' buat Part 2!",
+    "hashtags": [
+      "#ceritahidup",
+      "#sultanmenyamar",
+      "#drama",
+      "#reelsdrama",
+      "#povwarteg",
+      "#viraltiktok",
+      "#kisahnyata",
+      "#karma"
+    ]
+  }
+}
