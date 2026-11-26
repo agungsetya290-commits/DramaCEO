@@ -1,120 +1,108 @@
 {
-  "tanggal": "2026-11-26",
-  "jam": "16:00 WIB",
-  "mode": "Jaring Pengaman (Editorial Viral Template)",
+  "tanggal": "2026-11-27",
+  "jam": "02:26 WIB",
+  "mode": "AI Live Generation (Gemini)",
   "kategori": "POV Warteg / Angkringan",
   "ide": {
-    "kategori": "POV Warteg / Angkringan",
-    "judul": "MAKAN DI WARTEG BAJU KUSUT, PAS BAYAR SALDO 85 MILIAR!",
+    "judul": "Sultan Angkringan",
     "karakter": {
-      "protagonis": "Rian (23 tahun, kaos oblong putih lusuh, celana pendek, sandal jepit)",
-      "antagonis": "Danu (30 tahun, kemeja rapi mengkilap, jam tangan emas kw, pamer kunci mobil cicilan)"
+      "protagonis": "Jono, penjaga angkringan sederhana berpenampilan compang-camping",
+      "antagonis": "Rian, pelanggan sombong yang sok kaya dan suka pamer"
     },
-    "situasi_penghinaan": "Danu menyindir Rian yang cuma makan nasi setengah sama orek tempe, bilang anak muda sekarang malas dan tidak punya masa depan.",
-    "plot_twist": "Pas mau bayar, kasir bilang total 15 ribu. Rian buka m-banking BCA Prioritas untuk scan QRIS, saldo terlihat 85.420.000.000 rupiah. Rian sekalian bayarin semua orang di warteg.",
-    "ending": "Danu melotot tersedak es teh, langsung buru-buru menyembunyikan kunci mobilnya ke dalam kantong."
+    "situasi_penghinaan": "Rian makan banyak di angkringan lalu menghina Jono sebagai pengemis berkedok pedagang karena tidak bisa membayar pakai kartu kredit dan hanya menyuruh bayar pakai uang pas.",
+    "plot_twist": "Saat Rian ingin kabur karena dompetnya tertinggal dan berniat menghina Jono lebih lanjut, datang manajer bank dan pemilik mal mewah setempat yang mencium tangan Jono sambil memanggilnya 'Pemilik Lahan Utama'.",
+    "ending": "Rian syok berat mengetahui angkringan tersebut adalah tanah milik Jono yang bernilai miliaran, dan Rian diusir dari tempat itu selamanya."
   },
   "naskah": {
-    "hook_awal": "Makan di warteg nasi tempe orek, tapi pas buka m-banking saldonya bikin kasir gemetar!",
-    "naskah_voiceover_lengkap": "Anak muda sekarang gayanya doang elit, tapi makan di warteg cuma kuat beli tempe orek! Gaji UMR ya mas? Sini saya traktir es teh biar nggak melas! Rian cuma tersenyum tipis sambil mengunyah kerupuk. Mbak, total semuanya berapa ya sama punya mas yang di sebelah? Lima belas ribu mas... Pas scan QRIS, layar HP Rian menyala. Saldo rekening utama: delapan puluh lima miliar rupiah. Mbak, kembaliannya ambil aja, sama tolong bungkusin 50 porsi buat warga sekitar ya. Pria yang tadi pamer mendadak pucat dan tersedak es tehnya. Jangan pernah nilai isi dompet seseorang dari sandal jepit yang dia pakai! Tulis di komentar: LANJUT PART 2!",
+    "hook_awal": "Gimana rasanya ngehina tukang angkringan kumuh, tapi ternyata dia pemilik mal tempat lo nongkrong?",
+    "naskah_voiceover_lengkap": "Rian sok pamer kartu kredit di angkringan kumuh milik Jono. Karena Jono cuma minta uang pas dan nggak punya mesin EDC, Rian menghinanya sebagai pengemis berkedok pedagang. Sialnya, dompet Rian ketinggalan! Pas mau kabur dan mau maki-maki Jono lagi, tiba-tiba manajer bank dan pemilik mal datang dan langsung mencium tangan Jono sambil manggil 'Pemilik Lahan Utama'. Rian langsung syok berat tahu angkringan ini tanahnya bernilai miliaran, dan dia langsung diusir selamanya.",
     "timeline": [
       {
         "detik": "00:00-00:06",
-        "dialog_narasi": "Anak muda sekarang gayanya doang elit, tapi makan di warteg cuma kuat beli tempe orek! Gaji UMR ya mas?",
-        "visual_aksi": "Pria berjas rapi menatap remeh ke arah Rian yang berbaju oblong",
-        "teks_layar": "CUMA KUAT BELI TEMPE OREK?!"
+        "dialog_narasi": "Gimana rasanya ngehina tukang angkringan kumuh, tapi ternyata dia pemilik mal tempat lo nongkrong?",
+        "visual_aksi": "Rian melempar kartu kredit ke meja angkringan Jono dengan gaya sombong.",
+        "teks_layar": "SULTAN ANGKRINGAN"
       },
       {
-        "detik": "00:06-00:15",
-        "dialog_narasi": "Sini saya traktir es teh biar nggak melas! Rian cuma tersenyum tipis sambil mengunyah kerupuk.",
-        "visual_aksi": "Rian tetap santai menyuap nasi tanpa terpancing emosi",
-        "teks_layar": "SINI SAYA TRAKTIR!"
+        "detik": "00:06-00:18",
+        "dialog_narasi": "Rian makan banyak lalu menghina Jono sebagai pengemis berkedok pedagang karena nggak terima cuma disuruh bayar pakai uang pas.",
+        "visual_aksi": "Jono yang berpenampilan compang-camping hanya tersenyum sabar memegang uang lembaran kusut dari Rian.",
+        "teks_layar": "PENGEMIS BERKEDOK PEDAGANG?"
       },
       {
-        "detik": "00:15-00:28",
-        "dialog_narasi": "Mbak, total semuanya berapa ya sama punya mas yang di sebelah? Lima belas ribu mas...",
-        "visual_aksi": "Rian mengeluarkan ponsel titanium hitam dan membuka aplikasi mobile banking",
-        "teks_layar": "TOTAL LIMA BELAS RIBU"
+        "detik": "00:18-00:30",
+        "dialog_narasi": "Sialnya, saat mau pergi, dompet Rian ketinggalan di mobil dan dia berniat menghina Jono lebih parah lagi.",
+        "visual_aksi": "Rian merogoh saku dengan panik, wajahnya pucat karena dompetnya tidak ada, lalu menatap Jono dengan remeh.",
+        "teks_layar": "DOMPET KETINGGALAN!"
       },
       {
-        "detik": "00:28-00:42",
-        "dialog_narasi": "Pas scan QRIS, layar HP menyala. Saldo rekening utama: 85 miliar rupiah! Mbak, sekalian tolong bungkusin 50 porsi buat warga sekitar.",
-        "visual_aksi": "Close up layar HP menampilkan saldo fantastis 85 Miliar. Ibu warteg kaget melotot.",
-        "teks_layar": "SALDO: RP 85.420.000.000"
+        "detik": "00:30-00:45",
+        "dialog_narasi": "Tiba-tiba, manajer bank dan pemilik mal mewah setempat datang terburu-buru dan langsung mencium tangan Jono!",
+        "visual_aksi": "Dua orang berpakaian jas rapi datang membungkuk hormat dan mencium tangan Jono.",
+        "teks_layar": "PEMILIK LAHAN UTAMA"
       },
       {
-        "detik": "00:42-00:52",
-        "dialog_narasi": "Pria yang tadi pamer mendadak pucat pasi dan tersedak es tehnya, buru-buru menyembunyikan kunci mobilnya.",
-        "visual_aksi": "Danu batuk-batuk syok, tangannya gemetar menaruh gelas es teh",
-        "teks_layar": "LANGSUNG KERINGAT DINGIN!"
-      },
-      {
-        "detik": "00:52-00:60",
-        "dialog_narasi": "Jangan pernah nilai isi dompet seseorang dari sandal jepit yang dia pakai! Tulis di komentar: LANJUT PART 2!",
-        "visual_aksi": "Rian melangkah keluar santai dijemput mobil Alphard hitam",
-        "teks_layar": "KOMEN: LANJUT PART 2!"
+        "detik": "00:45-00:01:00",
+        "dialog_narasi": "Rian syok berat tahu tanah angkringan ini bernilai miliaran, dan dia langsung diusir dari tempat itu selamanya.",
+        "visual_aksi": "Rian terduduk lemas ketakutan, sementara Jono melambaikan tangan menyuruhnya pergi selamanya.",
+        "teks_layar": "DIUSIR SELAMANYA!"
       }
     ]
   },
   "visual_prompts": {
-    "character_consistency": "Rian: 24-year-old Asian man, humble casual t-shirt and shorts, calm smile. Danu: 30-year-old Asian man, sleek combed hair, sharp collared shirt, haughty expression.",
+    "character_consistency": "Consistent characters: Rian, a sleek arrogant young man in a modern designer jacket with slicked hair. Jono, an older humble street food vendor with wrinkled face, messy hair, wearing simple worn-out clothes. Manager, a professional man in a sharp black suit.",
     "shots": [
       {
         "shot": 1,
         "timecode": "00:00-00:06",
-        "prompt_en": "Vertical 9:16, low angle shot inside a vibrant Indonesian warteg street food stall. An arrogant well-dressed man pointing mocking finger at a humble young customer eating simple food. Cinematic dramatic lighting, hyper-realistic, 4k.",
-        "camera_motion": "Slow zoom in",
-        "sound_fx": "Street ambiance, arrogant chuckle"
+        "prompt_en": "Vertical 9:16 video. Cinematic close-up of a proud arrogant young man named Rian throwing a credit card arrogantly onto a dirty wooden table at a traditional Indonesian street food cart (angkringan) at night, looking down with contempt at an older vendor named Jono. Dramatic neon street lighting, cinematic depth of field, 4k resolution.",
+        "camera_motion": "Push in slowly towards Rian's arrogant face.",
+        "sound_fx": "Sound of a credit card slapping sharply on wooden table and ambient street night traffic."
       },
       {
         "shot": 2,
-        "timecode": "00:06-00:15",
-        "prompt_en": "Vertical 9:16, medium shot of young humble Asian man in simple white shirt calmly smiling, holding food spoon, completely unfazed. Warm soft lighting, depth of field.",
-        "camera_motion": "Static focus",
-        "sound_fx": "Chewing sound, soft background clatter"
+        "timecode": "00:06-00:18",
+        "prompt_en": "Vertical 9:16 video. Medium shot of Jono wearing ragged clothes, smiling patiently while holding crumpled paper money handed by Rian. Jono looks calm and unfazed by the insult. Moody night lighting, detailed skin textures, realistic cinematic atmosphere.",
+        "camera_motion": "Static medium shot with slight handheld organic movement.",
+        "sound_fx": "Murmur of street chatter and rustling crumpled money."
       },
       {
         "shot": 3,
-        "timecode": "00:15-00:28",
-        "prompt_en": "Vertical 9:16, close up of a luxury titanium smartphone in a casual hand scanning QR code at wooden counter. Screen glowing brightly.",
-        "camera_motion": "Tracking shot",
-        "sound_fx": "QR scan beep"
+        "timecode": "00:18-00:30",
+        "prompt_en": "Vertical 9:16 video. Close-up of Rian patting his empty pockets frantically, his face turning pale and panicked as he realizes his wallet is missing in his car, yet trying to maintain a mocking smirk towards Jono. Dramatic tension lighting, sharp focus on Rian's expression.",
+        "camera_motion": "Quick zoom into Rian's panicked face.",
+        "sound_fx": "Suspenseful cinematic whoosh sound effect."
       },
       {
         "shot": 4,
-        "timecode": "00:28-00:42",
-        "prompt_en": "Vertical 9:16, extreme macro close up of banking app screen showing astronomical balance 'Rp 85,420,000,000'. High-tech screen reflection in stunned female cashier's eyes.",
-        "camera_motion": "Crash zoom",
-        "sound_fx": "Dramatic bass drop horn"
+        "timecode": "00:30-00:45",
+        "prompt_en": "Vertical 9:16 video. Medium wide shot at night. Two men in formal expensive business suits rush into the modest street food stall and immediately bow down deeply to respectfully kiss Jono's hand. Rian in the background stands frozen in utter shock. Cinematic lighting, high production value.",
+        "camera_motion": "Pan from Rian's shocked face down to the businessmen bowing to Jono.",
+        "sound_fx": "Sound of hurried footsteps and gasp of surprise."
       },
       {
         "shot": 5,
-        "timecode": "00:42-00:52",
-        "prompt_en": "Vertical 9:16, wide angle of arrogant man choking on his iced tea, eyes wide in absolute shock, trembling hands hiding car keys on wooden table.",
-        "camera_motion": "Slight shake",
-        "sound_fx": "Choking cough, glass thud"
-      },
-      {
-        "shot": 6,
-        "timecode": "00:52-00:60",
-        "prompt_en": "Vertical 9:16, cinematic outdoor shot of the young humble man stepping into a luxury black executive van parked outside humble street stall. Epic sunset rim lighting.",
-        "camera_motion": "Slow dolly out",
-        "sound_fx": "Car door slide, triumphant rising strings"
+        "timecode": "00:45-01:00",
+        "prompt_en": "Vertical 9:16 video. Wide shot of Rian sitting weakly on a plastic stool, trembling in fear and defeat. Jono stands tall and confident, calmly waving his hand signaling Rian to leave the premises forever. Luxury mall background blurred in the distance. Cinematic conclusion lighting.",
+        "camera_motion": "Pull back slowly revealing the massive luxury mall behind the humble food cart.",
+        "sound_fx": "Dramatic musical swell ending with a sharp dismissive wave sound."
       }
     ]
   },
   "distribusi": {
-    "teks_thumbnail": "SALDO 85 MILIAR DI WARTEG!",
-    "caption_postingan": "Makanya mas, jangan suka meremehkan orang dari penampilannya! Siapa sangka yang makan tempe orek ternyata pemilik kawasan ruko 😱 Komen 'LANJUT' buat Part 2!",
+    "teks_thumbnail": "DIHINA KASAR, SULTAN ANKRINGAN BONGKAR IDENTITAS ASLI!",
+    "caption_postingan": "Gila sih ini! Makanya jangan suka 🛑 underestimate sama orang yang penampilannya sederhana. Niatnya cuma mau ngopi santai, eh malah bikin satu warung skakmat pas bayar pakai Black Card! 😱 Siapa nih yang sering tertipu penampakan luar? Coba tag orangnya di kolom komentar! 👇✨ #DramaViral #SultanAngkringan",
     "hashtags": [
-      "#ceritahidup",
-      "#sultanmenyamar",
-      "#drama",
-      "#reelsdrama",
-      "#povwarteg",
-      "#viraltiktok",
-      "#kisahnyata",
-      "#karma"
+      "#SultanAngkringan",
+      "#DramaIndonesia",
+      "#ShortMovie",
+      "#PlotTwist",
+      "#BossKecil",
+      "#KisahNyata",
+      "#FYP",
+      "#TrendingTikTok",
+      "#DramaTranding",
+      "#NontonDrama"
     ]
   }
 }

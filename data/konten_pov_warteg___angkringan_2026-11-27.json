@@ -1,0 +1,108 @@
+{
+  "tanggal": "2026-11-27",
+  "jam": "02:26 WIB",
+  "mode": "AI Live Generation (Gemini)",
+  "kategori": "POV Warteg / Angkringan",
+  "ide": {
+    "judul": "Sultan Angkringan",
+    "karakter": {
+      "protagonis": "Jono, penjaga angkringan sederhana berpenampilan compang-camping",
+      "antagonis": "Rian, pelanggan sombong yang sok kaya dan suka pamer"
+    },
+    "situasi_penghinaan": "Rian makan banyak di angkringan lalu menghina Jono sebagai pengemis berkedok pedagang karena tidak bisa membayar pakai kartu kredit dan hanya menyuruh bayar pakai uang pas.",
+    "plot_twist": "Saat Rian ingin kabur karena dompetnya tertinggal dan berniat menghina Jono lebih lanjut, datang manajer bank dan pemilik mal mewah setempat yang mencium tangan Jono sambil memanggilnya 'Pemilik Lahan Utama'.",
+    "ending": "Rian syok berat mengetahui angkringan tersebut adalah tanah milik Jono yang bernilai miliaran, dan Rian diusir dari tempat itu selamanya."
+  },
+  "naskah": {
+    "hook_awal": "Gimana rasanya ngehina tukang angkringan kumuh, tapi ternyata dia pemilik mal tempat lo nongkrong?",
+    "naskah_voiceover_lengkap": "Rian sok pamer kartu kredit di angkringan kumuh milik Jono. Karena Jono cuma minta uang pas dan nggak punya mesin EDC, Rian menghinanya sebagai pengemis berkedok pedagang. Sialnya, dompet Rian ketinggalan! Pas mau kabur dan mau maki-maki Jono lagi, tiba-tiba manajer bank dan pemilik mal datang dan langsung mencium tangan Jono sambil manggil 'Pemilik Lahan Utama'. Rian langsung syok berat tahu angkringan ini tanahnya bernilai miliaran, dan dia langsung diusir selamanya.",
+    "timeline": [
+      {
+        "detik": "00:00-00:06",
+        "dialog_narasi": "Gimana rasanya ngehina tukang angkringan kumuh, tapi ternyata dia pemilik mal tempat lo nongkrong?",
+        "visual_aksi": "Rian melempar kartu kredit ke meja angkringan Jono dengan gaya sombong.",
+        "teks_layar": "SULTAN ANGKRINGAN"
+      },
+      {
+        "detik": "00:06-00:18",
+        "dialog_narasi": "Rian makan banyak lalu menghina Jono sebagai pengemis berkedok pedagang karena nggak terima cuma disuruh bayar pakai uang pas.",
+        "visual_aksi": "Jono yang berpenampilan compang-camping hanya tersenyum sabar memegang uang lembaran kusut dari Rian.",
+        "teks_layar": "PENGEMIS BERKEDOK PEDAGANG?"
+      },
+      {
+        "detik": "00:18-00:30",
+        "dialog_narasi": "Sialnya, saat mau pergi, dompet Rian ketinggalan di mobil dan dia berniat menghina Jono lebih parah lagi.",
+        "visual_aksi": "Rian merogoh saku dengan panik, wajahnya pucat karena dompetnya tidak ada, lalu menatap Jono dengan remeh.",
+        "teks_layar": "DOMPET KETINGGALAN!"
+      },
+      {
+        "detik": "00:30-00:45",
+        "dialog_narasi": "Tiba-tiba, manajer bank dan pemilik mal mewah setempat datang terburu-buru dan langsung mencium tangan Jono!",
+        "visual_aksi": "Dua orang berpakaian jas rapi datang membungkuk hormat dan mencium tangan Jono.",
+        "teks_layar": "PEMILIK LAHAN UTAMA"
+      },
+      {
+        "detik": "00:45-00:01:00",
+        "dialog_narasi": "Rian syok berat tahu tanah angkringan ini bernilai miliaran, dan dia langsung diusir dari tempat itu selamanya.",
+        "visual_aksi": "Rian terduduk lemas ketakutan, sementara Jono melambaikan tangan menyuruhnya pergi selamanya.",
+        "teks_layar": "DIUSIR SELAMANYA!"
+      }
+    ]
+  },
+  "visual_prompts": {
+    "character_consistency": "Consistent characters: Rian, a sleek arrogant young man in a modern designer jacket with slicked hair. Jono, an older humble street food vendor with wrinkled face, messy hair, wearing simple worn-out clothes. Manager, a professional man in a sharp black suit.",
+    "shots": [
+      {
+        "shot": 1,
+        "timecode": "00:00-00:06",
+        "prompt_en": "Vertical 9:16 video. Cinematic close-up of a proud arrogant young man named Rian throwing a credit card arrogantly onto a dirty wooden table at a traditional Indonesian street food cart (angkringan) at night, looking down with contempt at an older vendor named Jono. Dramatic neon street lighting, cinematic depth of field, 4k resolution.",
+        "camera_motion": "Push in slowly towards Rian's arrogant face.",
+        "sound_fx": "Sound of a credit card slapping sharply on wooden table and ambient street night traffic."
+      },
+      {
+        "shot": 2,
+        "timecode": "00:06-00:18",
+        "prompt_en": "Vertical 9:16 video. Medium shot of Jono wearing ragged clothes, smiling patiently while holding crumpled paper money handed by Rian. Jono looks calm and unfazed by the insult. Moody night lighting, detailed skin textures, realistic cinematic atmosphere.",
+        "camera_motion": "Static medium shot with slight handheld organic movement.",
+        "sound_fx": "Murmur of street chatter and rustling crumpled money."
+      },
+      {
+        "shot": 3,
+        "timecode": "00:18-00:30",
+        "prompt_en": "Vertical 9:16 video. Close-up of Rian patting his empty pockets frantically, his face turning pale and panicked as he realizes his wallet is missing in his car, yet trying to maintain a mocking smirk towards Jono. Dramatic tension lighting, sharp focus on Rian's expression.",
+        "camera_motion": "Quick zoom into Rian's panicked face.",
+        "sound_fx": "Suspenseful cinematic whoosh sound effect."
+      },
+      {
+        "shot": 4,
+        "timecode": "00:30-00:45",
+        "prompt_en": "Vertical 9:16 video. Medium wide shot at night. Two men in formal expensive business suits rush into the modest street food stall and immediately bow down deeply to respectfully kiss Jono's hand. Rian in the background stands frozen in utter shock. Cinematic lighting, high production value.",
+        "camera_motion": "Pan from Rian's shocked face down to the businessmen bowing to Jono.",
+        "sound_fx": "Sound of hurried footsteps and gasp of surprise."
+      },
+      {
+        "shot": 5,
+        "timecode": "00:45-01:00",
+        "prompt_en": "Vertical 9:16 video. Wide shot of Rian sitting weakly on a plastic stool, trembling in fear and defeat. Jono stands tall and confident, calmly waving his hand signaling Rian to leave the premises forever. Luxury mall background blurred in the distance. Cinematic conclusion lighting.",
+        "camera_motion": "Pull back slowly revealing the massive luxury mall behind the humble food cart.",
+        "sound_fx": "Dramatic musical swell ending with a sharp dismissive wave sound."
+      }
+    ]
+  },
+  "distribusi": {
+    "teks_thumbnail": "DIHINA KASAR, SULTAN ANKRINGAN BONGKAR IDENTITAS ASLI!",
+    "caption_postingan": "Gila sih ini! Makanya jangan suka 🛑 underestimate sama orang yang penampilannya sederhana. Niatnya cuma mau ngopi santai, eh malah bikin satu warung skakmat pas bayar pakai Black Card! 😱 Siapa nih yang sering tertipu penampakan luar? Coba tag orangnya di kolom komentar! 👇✨ #DramaViral #SultanAngkringan",
+    "hashtags": [
+      "#SultanAngkringan",
+      "#DramaIndonesia",
+      "#ShortMovie",
+      "#PlotTwist",
+      "#BossKecil",
+      "#KisahNyata",
+      "#FYP",
+      "#TrendingTikTok",
+      "#DramaTranding",
+      "#NontonDrama"
+    ]
+  }
+}
