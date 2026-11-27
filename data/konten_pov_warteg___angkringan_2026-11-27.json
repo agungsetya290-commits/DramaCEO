@@ -1,107 +1,107 @@
 {
   "tanggal": "2026-11-27",
-  "jam": "02:26 WIB",
+  "jam": "16:17 WIB",
   "mode": "AI Live Generation (Gemini)",
   "kategori": "POV Warteg / Angkringan",
   "ide": {
-    "judul": "Sultan Angkringan",
+    "judul": "Sultan Sewaktu Sruput",
     "karakter": {
-      "protagonis": "Jono, penjaga angkringan sederhana berpenampilan compang-camping",
-      "antagonis": "Rian, pelanggan sombong yang sok kaya dan suka pamer"
+      "protagonis": "Mang Udin, penjaga warteg sederhana yang memakai kaos oblong robek dan sandal jepit swallow",
+      "antagonis": "Rian, pelanggan arogan yang memakai jas bermerk dan suka pamer mobil sport baru"
     },
-    "situasi_penghinaan": "Rian makan banyak di angkringan lalu menghina Jono sebagai pengemis berkedok pedagang karena tidak bisa membayar pakai kartu kredit dan hanya menyuruh bayar pakai uang pas.",
-    "plot_twist": "Saat Rian ingin kabur karena dompetnya tertinggal dan berniat menghina Jono lebih lanjut, datang manajer bank dan pemilik mal mewah setempat yang mencium tangan Jono sambil memanggilnya 'Pemilik Lahan Utama'.",
-    "ending": "Rian syok berat mengetahui angkringan tersebut adalah tanah milik Jono yang bernilai miliaran, dan Rian diusir dari tempat itu selamanya."
+    "situasi_penghinaan": "Rian mengejek Mang Udin dan wartegnya karena dikira miskin, lalu menghina pesanan Mang Udin (hanya nasi putih, tempe, dan es teh) serta mengusirnya dari meja saat Rian ingin duduk.",
+    "plot_twist": "Saat Rian mau membayar makanannya, kartu kreditnya ditolak karena limit habis. Manajer bank datang membungkuk hormat kepada Mang Udin yang ternyata adalah pemilik mayoritas saham bank tersebut dan pemilik tanah tempat mal tempat Rian bekerja berdiri.",
+    "ending": "Mang Udin melunasi tagihan Rian dengan segepok uang tunai, lalu menyuruh Rian mencuci piring di warteg karena tidak mampu bayar, sementara Rian menangis histeris."
   },
   "naskah": {
-    "hook_awal": "Gimana rasanya ngehina tukang angkringan kumuh, tapi ternyata dia pemilik mal tempat lo nongkrong?",
-    "naskah_voiceover_lengkap": "Rian sok pamer kartu kredit di angkringan kumuh milik Jono. Karena Jono cuma minta uang pas dan nggak punya mesin EDC, Rian menghinanya sebagai pengemis berkedok pedagang. Sialnya, dompet Rian ketinggalan! Pas mau kabur dan mau maki-maki Jono lagi, tiba-tiba manajer bank dan pemilik mal datang dan langsung mencium tangan Jono sambil manggil 'Pemilik Lahan Utama'. Rian langsung syok berat tahu angkringan ini tanahnya bernilai miliaran, dan dia langsung diusir selamanya.",
+    "hook_awal": "Hina tukang warteg, berujung cuci piring!",
+    "naskah_voiceover_lengkap": "Mang Udin, penjaga warteg sederhana, sering diremehkan pelanggan. Hari ini, Rian si sombong mengejek menunya yang cuma nasi putih dan tempe, lalu mengusirnya. Tapi Rian tidak tahu siapa yang dia hadapi. Saat mau bayar, kartu kredit Rian ditolak. Manajer bank datang membungkuk hormat, mengungkap bahwa Mang Udin adalah pemilik mayoritas bank dan tanah mal tempat Rian bekerja. Mang Udin santai melunasi tagihan Rian dengan segepok uang tunai, lalu menyuruh Rian mencuci piring sebagai hukuman. Karma instan untuk si sombong!",
     "timeline": [
       {
         "detik": "00:00-00:06",
-        "dialog_narasi": "Gimana rasanya ngehina tukang angkringan kumuh, tapi ternyata dia pemilik mal tempat lo nongkrong?",
-        "visual_aksi": "Rian melempar kartu kredit ke meja angkringan Jono dengan gaya sombong.",
-        "teks_layar": "SULTAN ANGKRINGAN"
+        "dialog_narasi": "Jangan pernah menilai seseorang dari penampilannya, apalagi cuma dari pakaian dan wartegnya.",
+        "visual_aksi": "Rian yang berjas rapi menatap jijik ke arah Mang Udin yang memakai kaos oblong robek dan sandal jepit.",
+        "teks_layar": "JANGAN LIHAT ORANG DARI LUAR!"
       },
       {
-        "detik": "00:06-00:18",
-        "dialog_narasi": "Rian makan banyak lalu menghina Jono sebagai pengemis berkedok pedagang karena nggak terima cuma disuruh bayar pakai uang pas.",
-        "visual_aksi": "Jono yang berpenampilan compang-camping hanya tersenyum sabar memegang uang lembaran kusut dari Rian.",
-        "teks_layar": "PENGEMIS BERKEDOK PEDAGANG?"
+        "detik": "00:06-00:15",
+        "dialog_narasi": "Rian mengejek pesanan Mang Udin yang hanya nasi putih, tempe, dan es teh, lalu mengusirnya dari meja.",
+        "visual_aksi": "Rian menggebrak meja warteg, menertawakan piring Mang Udin, dan menyuruhnya pindah tempat duduk secara kasar.",
+        "teks_layar": "DIBULI KARENA SEDERHANA"
       },
       {
-        "detik": "00:18-00:30",
-        "dialog_narasi": "Sialnya, saat mau pergi, dompet Rian ketinggalan di mobil dan dia berniat menghina Jono lebih parah lagi.",
-        "visual_aksi": "Rian merogoh saku dengan panik, wajahnya pucat karena dompetnya tidak ada, lalu menatap Jono dengan remeh.",
-        "teks_layar": "DOMPET KETINGGALAN!"
+        "detik": "00:15-00:30",
+        "dialog_narasi": "Saat Rian mau membayar makanannya yang mahal, tiba-tiba kartu kreditnya ditolak karena limit habis.",
+        "visual_aksi": "Kasir warteg menunjukkan mesin EDC yang bertuliskan 'DECLINED'. Rian panik, keringat dingin, mencoba kartu lainnya.",
+        "teks_layar": "KARTU DITOLAK!"
       },
       {
         "detik": "00:30-00:45",
-        "dialog_narasi": "Tiba-tiba, manajer bank dan pemilik mal mewah setempat datang terburu-buru dan langsung mencium tangan Jono!",
-        "visual_aksi": "Dua orang berpakaian jas rapi datang membungkuk hormat dan mencium tangan Jono.",
-        "teks_layar": "PEMILIK LAHAN UTAMA"
+        "dialog_narasi": "Manajer bank datang dan membungkuk hormat kepada Mang Udin yang ternyata pemilik saham mayoritas dan tanah mal!",
+        "visual_aksi": "Manajer bank berlari masuk ke warteg, langsung bersimpuh hormat di depan Mang Udin. Rian terbelalak kaget.",
+        "teks_layar": "PLOT TWIST: PEMILIK BANK & TANAH MAL!"
       },
       {
-        "detik": "00:45-00:01:00",
-        "dialog_narasi": "Rian syok berat tahu tanah angkringan ini bernilai miliaran, dan dia langsung diusir dari tempat itu selamanya.",
-        "visual_aksi": "Rian terduduk lemas ketakutan, sementara Jono melambaikan tangan menyuruhnya pergi selamanya.",
-        "teks_layar": "DIUSIR SELAMANYA!"
+        "detik": "00:45-00:60",
+        "dialog_narasi": "Mang Udin melunasi tagihan Rian dengan segepok uang tunai dan menyuruhnya cuci piring karena tak mampu bayar.",
+        "visual_aksi": "Mang Udin melempar gepokan uang, lalu menyuruh Rian memakai apron dan mencuci piring sementara Rian menangis histeris.",
+        "teks_layar": "AKHIRNYA: CUCI PIRING!"
       }
     ]
   },
   "visual_prompts": {
-    "character_consistency": "Consistent characters: Rian, a sleek arrogant young man in a modern designer jacket with slicked hair. Jono, an older humble street food vendor with wrinkled face, messy hair, wearing simple worn-out clothes. Manager, a professional man in a sharp black suit.",
+    "character_consistency": "Maintain consistent actors: Rian, a sleek man in a sharp business suit with slicked-back hair, and Mang Udin, an older man wearing a worn-out torn t-shirt, simple sarong, and flip-flops.",
     "shots": [
       {
         "shot": 1,
         "timecode": "00:00-00:06",
-        "prompt_en": "Vertical 9:16 video. Cinematic close-up of a proud arrogant young man named Rian throwing a credit card arrogantly onto a dirty wooden table at a traditional Indonesian street food cart (angkringan) at night, looking down with contempt at an older vendor named Jono. Dramatic neon street lighting, cinematic depth of field, 4k resolution.",
-        "camera_motion": "Push in slowly towards Rian's arrogant face.",
-        "sound_fx": "Sound of a credit card slapping sharply on wooden table and ambient street night traffic."
+        "prompt_en": "Vertical 9:16 cinematic shot. Rian, a man in a sharp business suit, looks down with a disgusted and condescending expression at Mang Udin, an older man wearing a torn t-shirt and flip-flops inside a local Indonesian warteg. Dramatic lighting, photorealistic, 4k.",
+        "camera_motion": "Slow push in on Rian's face showing arrogance",
+        "sound_fx": "Subtle tense cinematic drone and background restaurant murmur"
       },
       {
         "shot": 2,
-        "timecode": "00:06-00:18",
-        "prompt_en": "Vertical 9:16 video. Medium shot of Jono wearing ragged clothes, smiling patiently while holding crumpled paper money handed by Rian. Jono looks calm and unfazed by the insult. Moody night lighting, detailed skin textures, realistic cinematic atmosphere.",
-        "camera_motion": "Static medium shot with slight handheld organic movement.",
-        "sound_fx": "Murmur of street chatter and rustling crumpled money."
+        "timecode": "00:06-00:15",
+        "prompt_en": "Vertical 9:16 cinematic shot. Rian slams his hand on the warteg wooden table, laughing mockingly at Mang Udin's simple plate of white rice, tempeh, and iced tea, rudely gesturing him to move seats. Realistic drama, expressive actors, 4k.",
+        "camera_motion": "Handheld camera shaking slightly to emphasize tension",
+        "sound_fx": "Loud table slam and mocking laughter sound effect"
       },
       {
         "shot": 3,
-        "timecode": "00:18-00:30",
-        "prompt_en": "Vertical 9:16 video. Close-up of Rian patting his empty pockets frantically, his face turning pale and panicked as he realizes his wallet is missing in his car, yet trying to maintain a mocking smirk towards Jono. Dramatic tension lighting, sharp focus on Rian's expression.",
-        "camera_motion": "Quick zoom into Rian's panicked face.",
-        "sound_fx": "Suspenseful cinematic whoosh sound effect."
+        "timecode": "00:15-00:30",
+        "prompt_en": "Vertical 9:16 cinematic shot. A warteg cashier holds up an EDC credit card machine showing a red screen with the text 'DECLINED'. Rian sweats profusely, looking panicked and desperately checking multiple cards from his wallet. Dramatic close-up, 4k.",
+        "camera_motion": "Quick pan from the declined machine to Rian's panicked sweat-covered face",
+        "sound_fx": "Electronic error beep sound and heartbeat thumping"
       },
       {
         "shot": 4,
         "timecode": "00:30-00:45",
-        "prompt_en": "Vertical 9:16 video. Medium wide shot at night. Two men in formal expensive business suits rush into the modest street food stall and immediately bow down deeply to respectfully kiss Jono's hand. Rian in the background stands frozen in utter shock. Cinematic lighting, high production value.",
-        "camera_motion": "Pan from Rian's shocked face down to the businessmen bowing to Jono.",
-        "sound_fx": "Sound of hurried footsteps and gasp of surprise."
+        "prompt_en": "Vertical 9:16 cinematic shot. A bank manager in a full suit runs frantically into the warteg and bows deeply in extreme respect toward Mang Udin. Rian stands in the background with eyes wide open in sheer shock and disbelief. Cinematic lighting, 4k.",
+        "camera_motion": "Rapid zoom-in on Rian's shocked facial expression",
+        "sound_fx": "Dramatic impact sting followed by gasping sound"
       },
       {
         "shot": 5,
-        "timecode": "00:45-01:00",
-        "prompt_en": "Vertical 9:16 video. Wide shot of Rian sitting weakly on a plastic stool, trembling in fear and defeat. Jono stands tall and confident, calmly waving his hand signaling Rian to leave the premises forever. Luxury mall background blurred in the distance. Cinematic conclusion lighting.",
-        "camera_motion": "Pull back slowly revealing the massive luxury mall behind the humble food cart.",
-        "sound_fx": "Dramatic musical swell ending with a sharp dismissive wave sound."
+        "timecode": "00:45-00:60",
+        "prompt_en": "Vertical 9:16 cinematic shot. Mang Udin casually drops a thick stack of cash onto the table, while Rian is forced to wear a dishwashing apron, crying hysterically while scrubbing plates in the warteg sink. Humorous dramatic ending, photorealistic, 4k.",
+        "camera_motion": "Static wide shot capturing both the cash drop and Rian crying at the sink",
+        "sound_fx": "Cash bundle dropping on wood sound, followed by water splashing and sobbing"
       }
     ]
   },
   "distribusi": {
-    "teks_thumbnail": "DIHINA KASAR, SULTAN ANKRINGAN BONGKAR IDENTITAS ASLI!",
-    "caption_postingan": "Gila sih ini! Makanya jangan suka 🛑 underestimate sama orang yang penampilannya sederhana. Niatnya cuma mau ngopi santai, eh malah bikin satu warung skakmat pas bayar pakai Black Card! 😱 Siapa nih yang sering tertipu penampakan luar? Coba tag orangnya di kolom komentar! 👇✨ #DramaViral #SultanAngkringan",
+    "teks_thumbnail": "GANTENG TAPI NGUTANG?! BOS BESAR NYAMAR JADI PENGEMIS!",
+    "caption_postingan": "Niatnya mau ngopi santai sambil nyruput, eh malah dikira kere sama pegawai sombong! Nggak tau apa ya, sultan mah bebas mau pake celana pendek juga 😭🔥 Penasaran kelanjutannya? Tonton sampe habis ya bestie! #SultanSewaktuSruput #DramaIndonesia",
     "hashtags": [
-      "#SultanAngkringan",
-      "#DramaIndonesia",
-      "#ShortMovie",
-      "#PlotTwist",
-      "#BossKecil",
-      "#KisahNyata",
-      "#FYP",
-      "#TrendingTikTok",
-      "#DramaTranding",
+      "#SultanSewaktuSruput",
+      "#DramaShort",
+      "#Pembalasan",
+      "#BosBesar",
+      "#fyp",
+      "#TikTokID",
+      "#DramaViral",
+      "#FypIndo",
+      "#Trending",
       "#NontonDrama"
     ]
   }
