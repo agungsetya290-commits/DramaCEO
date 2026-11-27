@@ -1,0 +1,121 @@
+{
+  "tanggal": "2026-11-28",
+  "jam": "02:22 WIB",
+  "mode": "AI Live Generation (Gemini)",
+  "kategori": "Tukang Bakso Kaki Lima Sultan",
+  "ide": {
+    "judul": "Bakso Urat Berlian",
+    "karakter": {
+      "protagonis": "Mang Budi (Tukang bakso keliling sederhana yang aslinya konglomerat properti tersembunyi)",
+      "antagonis": "Siska (Pelanggan arogan yang juga mantan istri yang meremehkannya saat jatuh dulu)"
+    },
+    "situasi_penghinaan": "Siska menumpahkan mangkok bakso Mang Budi di depan umum, mencaci maki karena menganggapnya miskin, bau kuah, dan tidak tahu malu mangkal di depan mal mewah miliknya.",
+    "plot_twist": "Saat satpam mal ingin menyeret Mang Budi, Direktur Utama mal tersebut datang bersujud mencium tangan Mang Budi, mengungkap bahwa tanah mal dan seluruh gedung tersebut adalah milik sang tukang bakso.",
+    "ending": "Siska diusir dari mal miliknya sendiri oleh pihak manajemen, sementara Mang Budi melanjutkan mendorong gerobaknya sambil tersenyum tenang membagikan bakso gratis ke anak-anak jalanan."
+  },
+  "naskah": {
+    "hook_awal": "PRANG! 'Dasar tukang bakso miskin bau kuah! Nggak tahu malu mangkal di depan mall mewah saya!'",
+    "naskah_voiceover_lengkap": "Siska menumpahkan semangkuk bakso panas ke tanah tepat di depan gerobak Mang Budi. Mengira mantan suaminya masih gembel seperti dulu, Siska memanggil seluruh satpam untuk mengusir paksa. Namun sebelum satpam menyentuh Mang Budi, Direktur Utama mall berlari kencang dan bersujud mencium tangan sang tukang bakso. Ternyata, seluruh tanah dan gedung mall megah tersebut adalah milik Mang Budi. Seketika itu juga, kontrak butik Siska dibatalkan dan dia diusir keluar. Mang Budi hanya tersenyum tenang, kembali mendorong gerobaknya untuk membagikan bakso gratis kepada anak-anak jalanan.",
+    "timeline": [
+      {
+        "detik": "00:00-00:07",
+        "dialog_narasi": "Siska: 'PRANG! Dasar gembel bau kuah! Berani-beraninya kamu jualan di depan mall mewah saya!'",
+        "visual_aksi": "Close up mangkok bakso dibanting ke aspal hingga pecah. Siska berdiri dengan gaun merah mewah menatap jijik ke arah Mang Budi.",
+        "teks_layar": "DIHINA DI DEPAN UMUM!"
+      },
+      {
+        "detik": "00:07-00:16",
+        "dialog_narasi": "Siska: 'Dulu kamu melarat makanya ku tinggal! Sekarang malah jadi sampah pengotor pemandangan mall! Satpam, seret orang ini!'",
+        "visual_aksi": "Siska berteriak histeris menunjuk hidung Mang Budi. Kerumunan orang mulai merekam. Tiga satpam berbadan tegap maju mendekat.",
+        "teks_layar": "MANTAN ISTRI YANG AROGAN"
+      },
+      {
+        "detik": "00:16-00:26",
+        "dialog_narasi": "Mang Budi: 'Rezeki sudah ada jalannya, Siska. Jangan sombong dengan apa yang bukan milikmu.'",
+        "visual_aksi": "Mang Budi dengan tenang membersihkan pecahan mangkok tanpa rasa takut. Satpam hendak mencengkeram bahu Mang Budi.",
+        "teks_layar": "TETAP TENANG MENGHADAPI HINAAN"
+      },
+      {
+        "detik": "00:26-00:38",
+        "dialog_narasi": "Direktur: 'BERHENTI! JANGAN SENTUH BELIAU! Tuan Besar Budi... maafkan kelalaian kami menjaga ketenangan Anda!'",
+        "visual_aksi": "Pria berjas mewah (Dirut Mall) berlari panik, menepis satpam, lalu berlutut dan mencium tangan Mang Budi di hadapan semua orang.",
+        "teks_layar": "PLOT TWIST: DIREKTUR MALL BERSUJUD!"
+      },
+      {
+        "detik": "00:38-00:48",
+        "dialog_narasi": "Direktur: 'Siska, tanah mall ini 100% milik Tuan Budi! Surat sewa butikmu saya batalkan hari ini juga, Satpam USIR WANITA INI!'",
+        "visual_aksi": "Wajah Siska pucat pasi, syok tak percaya. Dua satpam berbalik menyeret Siska yang meronta-ronta menangis minta ampun.",
+        "teks_layar": "PEMILIK ASLI MALL TERBONGKAR!"
+      },
+      {
+        "detik": "00:48-00:60",
+        "dialog_narasi": "Mang Budi: 'Harta sejati bukan di gedung tinggi, tapi di hati yang mau berbagi. Ayo anak-anak, baksonya gratis!'",
+        "visual_aksi": "Mang Budi tersenyum teduh, kembali mendorong gerobaknya lalu menuangkan semangkuk bakso urat hangat ke anak jalanan yang tersenyum riang.",
+        "teks_layar": "KAYA HARTA, KAYA HATI"
+      }
+    ]
+  },
+  "visual_prompts": {
+    "character_consistency": "Mang Budi is an Indonesian man in his late 40s with a calm, dignified face, wearing a faded casual polo shirt and a worn vendor apron. Siska is an Indonesian woman in her late 30s with sharp features, heavy glamorous makeup, wearing a lavish crimson designer dress and high heels. The Mall Director is a clean-shaven Indonesian man in his 50s wearing an expensive tailored three-piece charcoal business suit with a gold watch.",
+    "shots": [
+      {
+        "shot": 1,
+        "timecode": "00:00-00:07",
+        "prompt_en": "Vertical 9:16 cinematic video. Extreme close-up of a porcelain soup bowl violently smashing onto black asphalt, hot broth and meatballs splattering in slow motion. Fast tilt-up to Siska, a glamorous woman in a lavish red dress, looking down with a sneer of pure disgust outside the grand entrance of a gleaming modern luxury mall. Cinematic lighting, photorealistic, 8k resolution.",
+        "camera_motion": "Low-angle tilt up with dynamic slow motion on impact",
+        "sound_fx": "Loud ceramic shattering crash, liquid splashing, distant street ambiance"
+      },
+      {
+        "shot": 2,
+        "timecode": "00:07-00:16",
+        "prompt_en": "Vertical 9:16 framing. Siska yelling hysterically with an arrogant, enraged expression, aggressively pointing her manicured finger directly at Mang Budi. Surrounding bystanders begin raising their smartphones to record the spectacle. In the background, three muscular mall security guards in crisp black uniforms march forward purposefully to intervene. Dramatic cinematic depth of field.",
+        "camera_motion": "Handheld slight camera shake, medium shot tracking Siska's aggressive gestures",
+        "sound_fx": "High-pitched angry shouting, camera shutter clicks, heavy security boots thudding"
+      },
+      {
+        "shot": 3,
+        "timecode": "00:16-00:26",
+        "prompt_en": "Vertical 9:16 perspective. Mang Budi crouches down serenely on the pavement, calmly picking up broken ceramic pieces with steady hands and an unbothered, wise demeanor. A large security guard's hand enters the frame, aggressively reaching down to grab Budi's shoulder. Low angle shot highlighting Budi's stoic composure contrasted against the menacing guards.",
+        "camera_motion": "Slow forward push-in, low-angle intimate focus",
+        "sound_fx": "Scraping of broken pottery against concrete, heavy tense breathing, subtle deep bass drone"
+      },
+      {
+        "shot": 4,
+        "timecode": "00:26-00:38",
+        "prompt_en": "Vertical 9:16 dramatic scene. The Mall Director in an immaculate three-piece suit sprints out in pure panic through the mall glass doors. He violently shoves the security guards aside, falls instantly to his knees onto the pavement, and reverently bows with both hands clasping Mang Budi's hand in deep humility and apologies. Bystanders freeze in utter shock.",
+        "camera_motion": "Rapid tracking shot following the running Director, swiftly dropping down into an extreme low-angle worship shot",
+        "sound_fx": "Frantic rushing footsteps, shocked collective gasps from crowd, dramatic orchestral brass hit"
+      },
+      {
+        "shot": 5,
+        "timecode": "00:38-00:48",
+        "prompt_en": "Vertical 9:16 frame. Fast rack focus to Siska's face turning deathly pale, mouth agape in sheer horror and disbelief. Two burly security guards grab Siska firmly by the arms, dragging her backwards away from the mall entrance as she thrashes and weeps hysterically, losing one of her high heels on the shiny pavement.",
+        "camera_motion": "Fast rack focus and dynamic pull-back tracking her being hauled away",
+        "sound_fx": "Desperate muffled crying and screaming, heels scraping roughly on floor, harsh authoritative guard calls"
+      },
+      {
+        "shot": 6,
+        "timecode": "00:48-01:00",
+        "prompt_en": "Vertical 9:16 warm cinematic aesthetic. Mang Budi smiles warmly and peacefully beside his traditional wooden street-food cart. Steam rises gracefully as he ladles rich hot soup into a fresh bowl and hands it generously to happy street children who beam with joy. Warm golden hour sunbeams illuminate the towering luxury mall in the background, creating a heartwarming and triumphant atmosphere.",
+        "camera_motion": "Smooth pedestal up with gentle pull-out reveal, soft golden anamorphic lens flare",
+        "sound_fx": "Ladle clinking against metal pot, bubbling broth, children's happy giggles, uplifting emotional acoustic melody"
+      }
+    ]
+  },
+  "distribusi": {
+    "teks_thumbnail": "KAGET! GIGIT BAKSO URAT ISI BERLIAN ASLI?!",
+    "caption_postingan": "Awalnya cuma mau makan siang beli bakso urat Rp15 ribu, pas digigit kok ada yang keras dan kemilau? 😱💎 Ternyata ada berlian mahal di dalemnya! Siapa sebenarnya tukang bakso ini?! Tonton sampai habis, plot twist-nya bikin merinding! 👇🔥",
+    "hashtags": [
+      "#BaksoUratBerlian",
+      "#DramaTikTok",
+      "#DramaPendek",
+      "#CeritaViral",
+      "#PlotTwist",
+      "#SinetronTikTok",
+      "#FilmPendek",
+      "#TrendingHariIni",
+      "#SerunyaNonton",
+      "#FYP"
+    ]
+  }
+}
