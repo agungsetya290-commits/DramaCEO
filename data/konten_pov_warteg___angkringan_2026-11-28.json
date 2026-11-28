@@ -1,0 +1,108 @@
+{
+  "tanggal": "2026-11-28",
+  "jam": "15:34 WIB",
+  "mode": "AI Live Generation (Gemini)",
+  "kategori": "POV Warteg / Angkringan",
+  "ide": {
+    "judul": "Sultan Sewaktu Sruput",
+    "karakter": {
+      "protagonis": "Mang Ujang (penjaga warteg sederhana yang selalu memakai kaos oblong belel)",
+      "antagonis": "Siska (selebgram sombong yang datang ke warteg hanya untuk konten mengejek)"
+    },
+    "situasi_penghinaan": "Siska menumpahkan es teh milik Mang Ujang, lalu menghina warteg tersebut sebagai tempat kaum miskin dan tidak berhak berdiri di dekat mobil sport miliknya.",
+    "plot_twist": "Manajer bank dan direktur utama perusahaan properti datang bersujud mencium tangan Mang Ujang karena ternyata Mang Ujang adalah pemilik tunggal gedung mal tempat Siska menyewa butik mewah.",
+    "ending": "Siska diusir dari area mal milik Mang Ujang dan akun sosial medianya diblokir dari semua pusat perbelanjaan elit."
+  },
+  "naskah": {
+    "hook_awal": "Sombongin warteg sederhana, selebgram ini gak tahu kalau pemilik mal tempat dia sewa butik adalah bapak-bapak kaos oblong!",
+    "naskah_voiceover_lengkap": "Mang Ujang cuma penjaga warteg biasa, tapi hidupnya penuh kejutan. Saat selebgram Siska datang buat bikin konten hinaan dan sengaja menumpahkan es teh, dia ngelunjak karena ngerasa paling kaya. Tapi roda itu berputar cepat! Manajer bank dan dirgrup properti datang bersujud nyium tangan Mang Ujang. Ternyata, Mang Ujang adalah pemilik tunggal gedung mal mewah tempat Siska nyewa butik! Seketika, Siska diusir dan diblokir dari semua pusat perbelanjaan elit.",
+    "timeline": [
+      {
+        "detik": "00:00-00:06",
+        "dialog_narasi": "Sombongin warteg sederhana, selebgram ini gak tahu siapa yang dia hadapi!",
+        "visual_aksi": "Siska dengan gaya angkuh menumpahkan es teh milik Mang Ujang di warteg.",
+        "teks_layar": "SULTAN SEWAKTU SRUPUT"
+      },
+      {
+        "detik": "00:06-00:15",
+        "dialog_narasi": "Siska menghina warteg sebagai tempat kaum miskin dan ngusir Mang Ujang dari dekat mobil sportnya.",
+        "visual_aksi": "Siska menunjuk-nunjuk wajah Mang Ujang yang memakai kaos oblong belel di depan mobil sport.",
+        "teks_layar": "Warteg buat orang miskin!"
+      },
+      {
+        "detik": "00:15-00:30",
+        "dialog_narasi": "Tiba-tiba dua orang pria jas rapi datang terburu-buru menghampiri mereka.",
+        "visual_aksi": "Manajer bank dan direktur utama perusahaan properti berlari panik ke arah warteg.",
+        "teks_layar": "Ada apa ini?!"
+      },
+      {
+        "detik": "00:30-00:45",
+        "dialog_narasi": "Tanpa diduga, mereka langsung bersujud dan mencium tangan Mang Ujang dengan penuh hormat.",
+        "visual_aksi": "Manajer bank dan dirut properti bersujud di kaki Mang Ujang, Siska terbelalak kaget.",
+        "teks_layar": "Maafkan kami, Bos Besar!"
+      },
+      {
+        "detik": "00:45-00:01:00",
+        "dialog_narasi": "Mang Ujang adalah pemilik tunggal mal tempat butik Siska berada. Siska langsung diusir dan diblokir!",
+        "visual_aksi": "Mang Ujang merapikan kerah bajunya, sementara Siska diseret satpam dan HP-nya menampilkan notifikasi blokir.",
+        "teks_layar": "Butik kamu resmi ditutup!"
+      }
+    ]
+  },
+  "visual_prompts": {
+    "character_consistency": "Consistent characters: Siska, a glamorous arrogant female influencer in trendy luxury clothes; Mang Ujang, an elderly humble man wearing a worn-out t-shirt and sarong; Bank Manager and Property Director, both in sharp formal business suits.",
+    "shots": [
+      {
+        "shot": 1,
+        "timecode": "00:00-00:06",
+        "prompt_en": "Vertical 9:16 video. An arrogant glamorous female influencer arrogantly spilling iced tea belonging to an elderly humble man in a simple traditional Indonesian food stall (warteg). Cinematic lighting, highly detailed, dramatic expression.",
+        "camera_motion": "Dynamic push-in close up",
+        "sound_fx": "Sound of glass clinking and liquid splashing, dramatic suspenseful music swell"
+      },
+      {
+        "shot": 2,
+        "timecode": "00:06-00:15",
+        "prompt_en": "Vertical 9:16 video. The arrogant influencer angrily pointing her finger at the face of the elderly man wearing a worn-out t-shirt, standing outdoors in front of an expensive luxury sports car. Cinematic realism, expressive angry face.",
+        "camera_motion": "Slow panning around the characters",
+        "sound_fx": "Argument sound effects, distant city traffic ambiance"
+      },
+      {
+        "shot": 3,
+        "timecode": "00:15-00:30",
+        "prompt_en": "Vertical 9:16 video. Two businessmen in sharp tailored suits running frantically in a panic down a sidewalk toward a humble food stall. Urgent expressions, cinematic daylight, professional cinematography.",
+        "camera_motion": "Fast tracking shot running backward",
+        "sound_fx": "Rapid footsteps on concrete, heavy panting, suspenseful rising music"
+      },
+      {
+        "shot": 4,
+        "timecode": "00:30-00:45",
+        "prompt_en": "Vertical 9:16 video. Two men in business suits bowing down to kiss the hand of the elderly man in the worn-out t-shirt with extreme respect. The arrogant influencer stands nearby with a jaw-dropping shocked expression, eyes wide open. Cinematic depth of field.",
+        "camera_motion": "Low angle steady shot pushing slowly forward",
+        "sound_fx": "Gasp of shock, dramatic cinematic chord hit"
+      },
+      {
+        "shot": 5,
+        "timecode": "00:45-01:00",
+        "prompt_en": "Vertical 9:16 video. The elderly man calmly adjusting his collar with authority. In the background, security guards are escorting the crying influencer away while her smartphone screen clearly shows a red blocked notification. Cinematic dramatic finish.",
+        "camera_motion": "Medium shot with a slight pan right to left",
+        "sound_fx": "Smartphone notification chime, triumphant cinematic background music crescendo"
+      }
+    ]
+  },
+  "distribusi": {
+    "teks_thumbnail": "GANTENG TAPI NGUTANG?! KAGET LIHAT ASLINYA!",
+    "caption_postingan": "Definisi 'jangan nilai buku dari sampungnya' 😭 Kirain sultan beneran, eh taunya... Pantesan kasirnya senyum-senyum curiga! Nonton selengkapnya di aplikasi kesayangan ya! #SultanSewaktuSruput",
+    "hashtags": [
+      "#SultanSewaktuSruput",
+      "#DramaIndonesia",
+      "#DramaShort",
+      "#FypTikTok",
+      "#RekomendasiDrama",
+      "#DramaViral",
+      "#LucuBanget",
+      "#ComedyDrama",
+      "#SerunyaNonton",
+      "#ShortsDrama"
+    ]
+  }
+}
